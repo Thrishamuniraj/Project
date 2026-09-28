@@ -1,0 +1,103 @@
+/* ==========================================================================
+   THREADMARK WORKWEAR — DARK MODE
+   Applies when <html data-theme="dark"> OR (no explicit choice AND OS is dark)
+   Theme is toggled/persisted by assets/js/main.js (localStorage key: "tm-theme")
+   ========================================================================== */
+
+/* System preference, only when the user has not made an explicit choice */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-background: #0f1216;
+    --color-background-alt: #171b20;
+    --color-surface: #171b20;
+    --color-surface-raised: #1d2228;
+    --color-text: #dfe3e8;
+    --color-text-muted: #9aa3b0;
+    --color-heading: #f4f6f8;
+    --color-border: #2a2f36;
+    --color-border-strong: #3a4149;
+    --color-link: #6fa4e0;
+    --color-overlay: rgba(0, 0, 0, 0.72);
+
+    --color-primary-light: #3a6ea8;
+    --color-success-bg: rgba(26, 127, 78, 0.16);
+    --color-warning-bg: rgba(168, 106, 5, 0.16);
+    --color-danger-bg: rgba(179, 38, 30, 0.16);
+    --color-info-bg: rgba(28, 93, 153, 0.18);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.55);
+  }
+}
+
+/* Explicit user choice (manual toggle), wins in both directions */
+:root[data-theme="dark"] {
+  --color-background: #0f1216;
+  --color-background-alt: #171b20;
+  --color-surface: #171b20;
+  --color-surface-raised: #1d2228;
+  --color-text: #dfe3e8;
+  --color-text-muted: #9aa3b0;
+  --color-heading: #f4f6f8;
+  --color-border: #2a2f36;
+  --color-border-strong: #3a4149;
+  --color-link: #6fa4e0;
+  --color-overlay: rgba(0, 0, 0, 0.72);
+
+  --color-primary-light: #3a6ea8;
+  --color-success-bg: rgba(26, 127, 78, 0.16);
+  --color-warning-bg: rgba(168, 106, 5, 0.16);
+  --color-danger-bg: rgba(179, 38, 30, 0.16);
+  --color-info-bg: rgba(28, 93, 153, 0.18);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* Component-specific dark adjustments that can't be solved by tokens alone */
+[data-theme="dark"] .category-card-media,
+[data-theme="dark"] .product-card-media,
+[data-theme="dark"] .blog-card-media,
+[data-theme="dark"] .team-card-media {
+  background: var(--color-surface-raised);
+}
+
+[data-theme="dark"] .skeleton { background: var(--color-grey-700); }
+
+[data-theme="dark"] .site-header { border-bottom-color: var(--color-border); }
+
+[data-theme="dark"] .upload-zone { background: var(--color-surface-raised); }
+
+[data-theme="dark"] .newsletter-form .input { background: rgba(255, 255, 255, 0.04); }
+
+/* --color-accent-dark (#c25315) is tuned for AA contrast on WHITE surfaces
+   (badges, buttons). Against dark surfaces it drops below 4.5:1, so these
+   text-only usages swap to the lighter accent tint in dark mode. */
+[data-theme="dark"] .eyebrow,
+[data-theme="dark"] .mobile-nav-links a[aria-current="page"],
+[data-theme="dark"] .product-card-industry,
+[data-theme="dark"] .timeline-year,
+[data-theme="dark"] .team-card span {
+  color: var(--color-accent-light);
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .eyebrow,
+  html:not([data-theme="light"]) .mobile-nav-links a[aria-current="page"],
+  html:not([data-theme="light"]) .product-card-industry,
+  html:not([data-theme="light"]) .timeline-year,
+  html:not([data-theme="light"]) .team-card span {
+    color: var(--color-accent-light);
+  }
+}
+
+/* Respect system dark when unset, mirrored for prefers-color-scheme media only (no explicit attr) */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .category-card-media,
+  html:not([data-theme]) .product-card-media,
+  html:not([data-theme]) .blog-card-media,
+  html:not([data-theme]) .team-card-media {
+    background: var(--color-surface-raised);
+  }
+}

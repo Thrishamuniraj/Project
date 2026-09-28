@@ -1,0 +1,16 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="blogHospTitle">
+  <title id="blogHospTitle">Illustration of a chef toque hat resting beside a folded white chef jacket</title>
+  <rect width="480" height="300" fill="#f7f8fa"/>
+  <g transform="translate(160,90)">
+    <ellipse cx="60" cy="0" rx="34" ry="40" fill="#ffffff" stroke="#e2e5ea" stroke-width="2"/>
+    <rect x="26" y="30" width="68" height="14" fill="#ffffff" stroke="#e2e5ea" stroke-width="2"/>
+  </g>
+  <g transform="translate(230,140)">
+    <rect x="0" y="0" width="150" height="100" rx="8" fill="#ffffff" stroke="#dfe3ea" stroke-width="2"/>
+    <circle cx="40" cy="30" r="4" fill="#cbd1d9"/>
+    <circle cx="40" cy="55" r="4" fill="#cbd1d9"/>
+    <circle cx="110" cy="30" r="4" fill="#cbd1d9"/>
+    <circle cx="110" cy="55" r="4" fill="#cbd1d9"/>
+    <rect x="60" y="70" width="30" height="20" rx="3" fill="#e2661f"/>
+  </g>
+</svg>

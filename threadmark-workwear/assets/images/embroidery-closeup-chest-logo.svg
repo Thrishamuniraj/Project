@@ -1,0 +1,21 @@
+<svg viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="embChestTitle">
+  <title id="embChestTitle">Close-up of an embroidered logo patch stitched onto the chest of a navy polo shirt</title>
+  <rect width="480" height="400" fill="#0e2a4a"/>
+  <g opacity="0.25" stroke="#1c4571" stroke-width="1">
+    <path d="M0 40 H480 M0 90 H480 M0 140 H480 M0 190 H480 M0 240 H480 M0 290 H480 M0 340 H480"/>
+  </g>
+  <rect x="150" y="130" width="180" height="140" rx="10" fill="#0a1f36" stroke="#f2894a" stroke-width="3"/>
+  <g stroke="#ffffff" stroke-width="2.5" stroke-dasharray="1 7" stroke-linecap="round" fill="none">
+    <rect x="150" y="130" width="180" height="140" rx="10"/>
+  </g>
+  <text x="240" y="195" font-family="Poppins, sans-serif" font-size="34" font-weight="700" fill="#ffffff" text-anchor="middle">TM</text>
+  <text x="240" y="225" font-family="Inter, sans-serif" font-size="12" letter-spacing="3" fill="#f2894a" text-anchor="middle">WORKWEAR</text>
+  <g transform="translate(370,80)">
+    <rect x="0" y="0" width="28" height="46" rx="5" fill="#e2661f"/>
+    <rect x="0" y="0" width="28" height="8" fill="#c25315"/>
+  </g>
+  <g transform="translate(410,90)">
+    <rect x="0" y="0" width="22" height="38" rx="5" fill="#f7f8fa"/>
+    <rect x="0" y="0" width="22" height="7" fill="#cbd1d9"/>
+  </g>
+</svg>

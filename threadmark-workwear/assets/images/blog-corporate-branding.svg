@@ -1,0 +1,16 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="blogBrandTitle">
+  <title id="blogBrandTitle">Illustration of an embroidered company logo patch beside a brand color palette</title>
+  <rect width="480" height="300" fill="#f7f8fa"/>
+  <rect x="60" y="90" width="140" height="120" rx="10" fill="#0e2a4a"/>
+  <text x="130" y="160" font-family="Poppins, sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">TM</text>
+  <g transform="translate(240,100)">
+    <circle cx="0" cy="0" r="26" fill="#0e2a4a"/>
+    <circle cx="60" cy="0" r="26" fill="#e2661f"/>
+    <circle cx="120" cy="0" r="26" fill="#343a40"/>
+    <circle cx="180" cy="0" r="26" fill="#f7f8fa" stroke="#cbd1d9" stroke-width="2"/>
+  </g>
+  <g transform="translate(240,180)" fill="#343a40">
+    <rect width="180" height="10" rx="5" opacity="0.5"/>
+    <rect y="20" width="130" height="10" rx="5" opacity="0.3"/>
+  </g>
+</svg>

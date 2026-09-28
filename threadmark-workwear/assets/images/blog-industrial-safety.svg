@@ -1,0 +1,13 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="blogSafetyTitle">
+  <title id="blogSafetyTitle">Illustration of a high-visibility safety vest and hard hat</title>
+  <rect width="480" height="300" fill="#343a40"/>
+  <g transform="translate(190,60)">
+    <path d="M15 35 Q15 5 60 0 L100 30 L140 0 Q185 5 185 35 L200 85 L178 98 L178 200 L22 200 L22 98 L0 85 Z" fill="#e2661f"/>
+    <rect x="22" y="120" width="156" height="16" fill="#f4f6f8"/>
+    <rect x="97" y="10" width="6" height="190" fill="#c25315"/>
+  </g>
+  <g transform="translate(340,60)">
+    <path d="M-40 20 Q0 -30 40 20 Q40 0 0 -10 Q-40 0 -40 20 Z" fill="#f4c542"/>
+    <rect x="-42" y="14" width="84" height="10" rx="5" fill="#c9a02a"/>
+  </g>
+</svg>

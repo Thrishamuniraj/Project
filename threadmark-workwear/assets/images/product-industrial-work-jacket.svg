@@ -1,0 +1,13 @@
+<svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="prodIndJacketTitle">
+  <title id="prodIndJacketTitle">Product illustration of a charcoal Industrial Work Jacket with reinforced pockets</title>
+  <rect width="480" height="480" fill="#eef1f5"/>
+  <g transform="translate(135,70)">
+    <path d="M15 35 Q15 5 60 0 L100 30 L140 0 Q185 5 185 35 L205 90 L180 105 L180 320 L20 320 L20 105 L-5 90 Z" fill="#343a40"/>
+    <rect x="97" y="10" width="6" height="300" fill="#22262b"/>
+    <circle cx="100" cy="40" r="4" fill="#4b5159"/>
+    <circle cx="100" cy="90" r="4" fill="#4b5159"/>
+    <rect x="35" y="140" width="50" height="40" rx="4" fill="none" stroke="#6b7280" stroke-width="2"/>
+    <rect x="115" y="140" width="50" height="40" rx="4" fill="none" stroke="#6b7280" stroke-width="2"/>
+    <rect x="150" y="60" width="30" height="24" rx="3" fill="#e2661f"/>
+  </g>
+</svg>

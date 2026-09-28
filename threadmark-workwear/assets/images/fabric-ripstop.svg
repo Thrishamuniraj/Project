@@ -1,0 +1,10 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fabRipTitle">
+  <title id="fabRipTitle">Close-up texture swatch of durable ripstop industrial fabric</title>
+  <rect width="240" height="240" fill="#4b5159"/>
+  <g stroke="#5c636c" stroke-width="3">
+    <path d="M0 30 H240 M0 90 H240 M0 150 H240 M0 210 H240"/>
+  </g>
+  <g stroke="#3a4149" stroke-width="1.5">
+    <path d="M0 10 H240 M0 50 H240 M0 70 H240 M0 110 H240 M0 130 H240 M0 170 H240 M0 190 H240 M0 230 H240"/>
+  </g>
+</svg>

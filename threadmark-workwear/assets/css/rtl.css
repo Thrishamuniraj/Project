@@ -1,0 +1,102 @@
+/* ==========================================================================
+   THREADMARK WORKWEAR — RTL STYLESHEET
+   Loaded only when <html dir="rtl"> (Arabic, Hebrew). Most layout already
+   uses logical properties (margin-inline, inset-inline, border-inline-start,
+   text-align: start/end) in style.css, so this file only overrides the
+   handful of physical-direction rules that don't flip automatically:
+   transforms, gradients, icon mirroring, and script-specific typography.
+   ========================================================================== */
+
+[dir="rtl"] body {
+  font-family: 'Inter', 'Noto Sans Arabic', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Uppercase + letter-spacing is a Latin-script convention; Arabic/Hebrew
+   have no case distinction, so strip it to keep labels legible. */
+[dir="rtl"] .eyebrow,
+[dir="rtl"] .badge,
+[dir="rtl"] .hero-eyebrow,
+[dir="rtl"] .hero-stat span,
+[dir="rtl"] .stat-strip span,
+[dir="rtl"] .footer-col h3,
+[dir="rtl"] .footer-col h4,
+[dir="rtl"] .product-card-industry,
+[dir="rtl"] .team-card span,
+[dir="rtl"] .data-table thead th,
+[dir="rtl"] .sidebar-widget h3,
+[dir="rtl"] .toc-box h2,
+[dir="rtl"] .chart-card h3,
+[dir="rtl"] .chart-card .h3,
+[dir="rtl"] .countdown-item span,
+[dir="rtl"] .calculator-result-item span {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Directional gradients: mirror the diagonal so the light source reads
+   consistently instead of pointing the "wrong" way. */
+[dir="rtl"] .hero,
+[dir="rtl"] .page-hero,
+[dir="rtl"] .auth-visual,
+[dir="rtl"] .dashboard-sidebar {
+  background-image: none;
+}
+[dir="rtl"] .hero,
+[dir="rtl"] .auth-visual {
+  background: linear-gradient(205deg, var(--color-primary-dark) 0%, var(--color-primary) 62%, var(--color-primary-light) 100%);
+}
+[dir="rtl"] .page-hero {
+  background: linear-gradient(205deg, var(--color-primary-dark), var(--color-primary));
+}
+
+/* Icons that imply direction (arrows, chevrons) need a horizontal flip */
+[dir="rtl"] .icon-arrow-end,
+[dir="rtl"] .card-link .icon,
+[dir="rtl"] .category-card-link .icon,
+[dir="rtl"] .btn .icon-arrow,
+[dir="rtl"] .breadcrumb .icon-chevron {
+  transform: scaleX(-1);
+}
+
+/* Nav active-state underline and process-step numbers already rely on
+   inset-inline-start, but the process connector line (drawn with a
+   pseudo-element background gradient) needs an explicit flip */
+[dir="rtl"] .process-list { direction: rtl; }
+
+/* Quantity pill / swatch focus rings and checkbox accents render fine via
+   logical properties; only the drag handle cursor icons need mirroring */
+[dir="rtl"] .upload-zone .icon { transform: scaleX(-1); }
+
+/* Table numerals (prices, quantities, dates) stay LTR inside RTL flow for
+   legibility, per standard bidi practice */
+[dir="rtl"] .data-table td[data-numeric],
+[dir="rtl"] .product-price,
+[dir="rtl"] .stat-card strong,
+[dir="rtl"] .calculator-result-item strong,
+[dir="rtl"] .hero-stat strong {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: end;
+}
+
+/* Toast region and dropdown menus already use inset-inline-end so they
+   correctly appear on the visual left in RTL without extra rules. */
+
+/* Scroll-snap fabric strip should scroll from the reading start */
+[dir="rtl"] .fabric-strip { direction: rtl; }
+
+/* Select/caret background-position icons (native selects) */
+[dir="rtl"] select.select {
+  background-position: left var(--space-3) center;
+}
+
+/* Modal close / upload remove buttons sit at inline-end already via
+   inset-inline-end; no override needed. */
+
+/* Ensure number input steppers and price alignment in compact mobile cards */
+[dir="rtl"] .table-responsive-cards td { flex-direction: row-reverse; }
+[dir="rtl"] .table-responsive-cards td::before { text-align: start; }
+
+/* Phone numbers and email addresses stay left-to-right inside RTL layouts */
+[dir="rtl"] a[href^="tel:"],
+[dir="rtl"] a[href^="mailto:"] { direction: ltr; unicode-bidi: isolate; }

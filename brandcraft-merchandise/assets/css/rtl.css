@@ -1,0 +1,41 @@
+/* =========================================================
+   BrandCraft Merchandise — RTL Support (Arabic / Hebrew)
+   Loaded only when <html dir="rtl">. Most spacing already uses
+   logical properties (margin-inline, padding-inline, inset-inline),
+   and every flex "row" container in style.css auto-mirrors under
+   dir="rtl" natively (per the CSS Flexbox spec, main-axis direction
+   follows the computed `direction`) — as does CSS Grid explicit
+   line placement, via inherited `direction`. Do NOT add manual
+   `flex-direction: row-reverse` / `grid-column` overrides here for
+   containers that are already flex/grid "row"s: doing so double-
+   reverses them back to an LTR-looking (wrong) order. This file
+   only covers the genuinely physical (non-direction-aware)
+   properties: left/right offsets, border-left/right, and icons
+   whose meaning (e.g. "forward") should visually flip.
+   ========================================================= */
+
+[dir="rtl"] { text-align: right; }
+
+/* Hamburger-to-X animation: mirror the diagonal rotation direction. */
+[dir="rtl"] .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(-45deg); }
+[dir="rtl"] .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(45deg); }
+
+/* Physical left/right offsets on absolutely-positioned elements. */
+[dir="rtl"] .collage-badge { left: auto; right: var(--space-4); }
+[dir="rtl"] .product-badge { left: auto; right: var(--space-3); }
+[dir="rtl"] .modal-close { right: auto; left: var(--space-4); }
+[dir="rtl"] .toast-region { right: auto; left: var(--space-6); }
+[dir="rtl"] .timeline-item::before { left: auto; right: calc(-1 * var(--space-8) - 6px); }
+
+/* Timeline rail uses a physical border-left + padding-left. */
+[dir="rtl"] .timeline { border-left: none; border-right: 2px solid var(--color-border); padding-left: 0; padding-right: var(--space-8); }
+
+/* Breadcrumb separator: mirror the glyph and re-flip the built-in mirroring so it still reads as a forward slash. */
+[dir="rtl"] .breadcrumbs li:not(:last-child)::after { content: '\\'; transform: scaleX(-1); display: inline-block; }
+
+/* Directional icons: "forward" should point toward reading-start (left) in RTL. */
+[dir="rtl"] svg:has(> use[href="#icon-arrow-right"]) { transform: scaleX(-1); }
+
+/* Phone numbers and email addresses stay left-to-right inside RTL layouts */
+[dir="rtl"] a[href^="tel:"],
+[dir="rtl"] a[href^="mailto:"] { direction: ltr; unicode-bidi: isolate; }

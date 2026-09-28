@@ -1,0 +1,10 @@
+<svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="prodSoftTitle">
+  <title id="prodSoftTitle">Product illustration of a navy Corporate Softshell Jacket with an embroidered logo</title>
+  <rect width="480" height="480" fill="#f0f1f4"/>
+  <g transform="translate(135,70)">
+    <path d="M15 35 Q15 5 60 0 L100 30 L140 0 Q185 5 185 35 L200 95 L178 108 L178 320 L22 320 L22 108 L0 95 Z" fill="#1c4571"/>
+    <rect x="97" y="10" width="6" height="300" fill="#123456" opacity="0.4"/>
+    <path d="M22 108 Q100 130 178 108" fill="none" stroke="#0e2a4a" stroke-width="2"/>
+    <rect x="60" y="70" width="30" height="24" rx="4" fill="#f2894a" stroke="#ffffff" stroke-width="2"/>
+  </g>
+</svg>

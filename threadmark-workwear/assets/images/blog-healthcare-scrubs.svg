@@ -1,0 +1,12 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="blogScrubTitle">
+  <title id="blogScrubTitle">Illustration of a teal scrub top hanging beside a stethoscope</title>
+  <rect width="480" height="300" fill="#eef1f5"/>
+  <g transform="translate(190,60)">
+    <path d="M10 35 Q10 5 55 0 L110 45 L165 0 Q210 5 210 35 L190 90 L175 78 L175 200 L45 200 L45 78 L30 90 Z" fill="#1c6e6b"/>
+    <path d="M55 0 L110 45 L165 0" fill="none" stroke="#155451" stroke-width="3"/>
+  </g>
+  <g transform="translate(340,150)">
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#343a40" stroke-width="4"/>
+    <path d="M0 18 Q0 60 -40 60" fill="none" stroke="#343a40" stroke-width="4"/>
+  </g>
+</svg>

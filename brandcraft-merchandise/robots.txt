@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /pages/admin-dashboard.html
+Disallow: /pages/coming-soon.html
+
+Sitemap: https://www.brandcraftmerchandise.com/sitemap.xml

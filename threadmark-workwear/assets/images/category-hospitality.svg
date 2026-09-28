@@ -1,0 +1,18 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="catHospTitle">
+  <title id="catHospTitle">Flat illustration of a white double-breasted chef jacket with a toque hat</title>
+  <rect width="480" height="360" fill="#f7f8fa"/>
+  <g transform="translate(150,90)">
+    <ellipse cx="60" cy="-40" rx="34" ry="40" fill="#ffffff" stroke="#e2e5ea" stroke-width="2"/>
+    <rect x="26" y="-10" width="68" height="14" fill="#ffffff" stroke="#e2e5ea" stroke-width="2"/>
+  </g>
+  <g transform="translate(115,130)">
+    <path d="M10 30 Q10 5 45 0 L90 20 L135 0 Q170 5 170 30 L155 260 L25 260 Z" fill="#ffffff" stroke="#dfe3ea" stroke-width="2"/>
+    <circle cx="60" cy="50" r="5" fill="#cbd1d9"/>
+    <circle cx="60" cy="80" r="5" fill="#cbd1d9"/>
+    <circle cx="60" cy="110" r="5" fill="#cbd1d9"/>
+    <circle cx="120" cy="50" r="5" fill="#cbd1d9"/>
+    <circle cx="120" cy="80" r="5" fill="#cbd1d9"/>
+    <circle cx="120" cy="110" r="5" fill="#cbd1d9"/>
+    <rect x="70" y="150" width="30" height="24" rx="4" fill="#e2661f"/>
+  </g>
+</svg>

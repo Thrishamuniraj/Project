@@ -1,0 +1,23 @@
+<svg viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="indLogTitle">
+  <title id="indLogTitle">Illustration of a logistics worker wearing a high-visibility vest and cap beside a shipping box</title>
+  <defs>
+    <linearGradient id="gLog" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3f4750"/>
+      <stop offset="1" stop-color="#181b1f"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="480" fill="url(#gLog)"/>
+  <g transform="translate(90,360)">
+    <rect x="-40" y="-60" width="80" height="60" fill="#c9955a"/>
+    <path d="M-40 -60 L0 -75 L40 -60 M-40 -30 L0 -45 L40 -30" fill="none" stroke="#9a6f3a" stroke-width="3"/>
+  </g>
+  <g transform="translate(220,300)">
+    <path d="M-90 180 L-82 40 Q-82 -20 0 -30 Q82 -20 82 40 L90 180 Z" fill="#4b5159"/>
+    <path d="M-72 10 L-30 -20 L-30 150 L-72 150 Z" fill="#e2661f"/>
+    <path d="M72 10 L30 -20 L30 150 L72 150 Z" fill="#e2661f"/>
+  </g>
+  <g transform="translate(220,110)">
+    <circle cx="0" cy="30" r="52" fill="#8a5a3b"/>
+    <path d="M-52 4 Q0 -40 52 4 L52 -10 Q0 -26 -52 -10 Z" fill="#e2661f"/>
+  </g>
+</svg>

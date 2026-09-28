@@ -1,0 +1,26 @@
+<svg viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="embSleeveTitle">
+  <title id="embSleeveTitle">Close-up of embroidered stitching detail on a jacket sleeve with brand thread colors</title>
+  <rect width="480" height="400" fill="#343a40"/>
+  <path d="M0 0 H480 V400 H0 Z" fill="#3a4149"/>
+  <path d="M0 260 Q240 220 480 270 V400 H0 Z" fill="#2b2f36"/>
+  <g stroke="#22262b" stroke-width="1" opacity="0.4">
+    <path d="M0 40 H480 M0 90 H480 M0 140 H480 M0 190 H480"/>
+  </g>
+  <g transform="translate(150,110)">
+    <path d="M0 60 Q90 0 180 60 Q90 110 0 60 Z" fill="none" stroke="#f2894a" stroke-width="6" stroke-linecap="round"/>
+    <path d="M0 60 Q90 0 180 60 Q90 110 0 60 Z" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="1 6"/>
+    <circle cx="90" cy="60" r="20" fill="#0e2a4a" stroke="#f2894a" stroke-width="3"/>
+  </g>
+  <g transform="translate(60,250)">
+    <rect x="0" y="0" width="26" height="44" rx="5" fill="#0e2a4a"/>
+    <rect x="0" y="0" width="26" height="8" fill="#081b30"/>
+  </g>
+  <g transform="translate(100,260)">
+    <rect x="0" y="0" width="22" height="38" rx="5" fill="#e2661f"/>
+    <rect x="0" y="0" width="22" height="7" fill="#c25315"/>
+  </g>
+  <g transform="translate(136,250)">
+    <rect x="0" y="0" width="22" height="44" rx="5" fill="#f7f8fa"/>
+    <rect x="0" y="0" width="22" height="7" fill="#cbd1d9"/>
+  </g>
+</svg>

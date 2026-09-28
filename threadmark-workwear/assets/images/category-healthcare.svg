@@ -1,0 +1,10 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="catHealthTitle">
+  <title id="catHealthTitle">Flat illustration of a teal V-neck scrub top with a chest pocket</title>
+  <rect width="480" height="360" fill="#eef1f5"/>
+  <g transform="translate(130,55)">
+    <path d="M10 35 Q10 5 55 0 L110 45 L165 0 Q210 5 210 35 L190 90 L175 78 L175 290 L45 290 L45 78 L30 90 Z" fill="#1c6e6b"/>
+    <path d="M55 0 L110 45 L165 0" fill="none" stroke="#155451" stroke-width="3"/>
+    <rect x="70" y="110" width="36" height="28" rx="4" fill="none" stroke="#3f9490" stroke-width="2"/>
+    <rect x="130" y="120" width="30" height="24" rx="4" fill="#f2894a"/>
+  </g>
+</svg>

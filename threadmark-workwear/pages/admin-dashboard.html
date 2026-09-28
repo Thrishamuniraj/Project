@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(){var d=document.documentElement;try{var t=localStorage.getItem("tm-theme");if(t==="dark"||t==="light"){d.setAttribute("data-theme",t)}var r=localStorage.getItem("tm-dir");if(r==="rtl"||r==="ltr"){d.setAttribute("dir",r)}}catch(e){}})();</script>
+  <title>Admin Dashboard | ThreadMark Workwear</title>
+  <meta name="description" content="Internal ThreadMark Workwear demo dashboard for tracking uniform orders, embroidery proofs, production and revenue. Not part of the public site.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="canonical" href="https://www.threadmarkworkwear.com/pages/admin-dashboard.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Admin Dashboard | ThreadMark Workwear" />
+  <meta property="og:description" content="Internal ThreadMark Workwear demo dashboard for tracking uniform orders, embroidery proofs, production and revenue. Not part of the public site." />
+  <meta property="og:image" content="https://www.threadmarkworkwear.com/assets/images/og-image.jpg" />
+  <meta property="og:url" content="https://www.threadmarkworkwear.com/pages/admin-dashboard.html" />
+  <meta property="og:site_name" content="ThreadMark Workwear" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Admin Dashboard | ThreadMark Workwear" />
+  <meta name="twitter:description" content="Internal ThreadMark Workwear demo dashboard for tracking uniform orders, embroidery proofs, production and revenue. Not part of the public site." />
+  <meta name="twitter:image" content="https://www.threadmarkworkwear.com/assets/images/og-image.jpg" />
+</head>
+<body>
+  <a class="skip-link" href="#dashboardMain">Skip to main content</a>
+
+  <div class="dashboard-overlay" data-dashboard-overlay></div>
+
+  <div class="dashboard-shell">
+    <!-- ==========================================================================
+         DASHBOARD SIDEBAR
+    ========================================================================== -->
+    <aside class="dashboard-sidebar" data-dashboard-sidebar>
+      <a href="index.html" class="brand">
+        <img class="brand-mark" src="../assets/images/logo-mark.svg" alt="" width="40" height="40">
+        <span class="brand-name">ThreadMark<span style="color:var(--color-grey-400);">Admin</span></span>
+      </a>
+
+      <nav aria-label="Dashboard navigation" data-dashboard-nav>
+        <ul class="dashboard-nav">
+          <li><a href="#" data-section-target="overview" aria-current="page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Overview</a></li>
+          <li><a href="#" data-section-target="orders"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Orders</a></li>
+          <li><a href="#" data-section-target="quotes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Quotes</a></li>
+          <li><a href="#" data-section-target="customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Customers</a></li>
+          <li><a href="#" data-section-target="products"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23Z"/></svg>Products</a></li>
+          <li><a href="#" data-section-target="embroidery"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Embroidery Requests</a></li>
+          <li><a href="#" data-section-target="messages"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Messages</a></li>
+          <li><a href="#" data-section-target="reports"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/></svg>Reports</a></li>
+          <li><a href="#" data-section-target="settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>Settings</a></li>
+        </ul>
+      </nav>
+
+      <div style="margin-top:auto; padding-top:var(--space-6); border-top:1px solid rgba(255,255,255,0.1);">
+        <a href="index.html" style="display:flex; align-items:center; gap:var(--space-3); color:var(--color-grey-300); font-size:var(--fs-sm);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Back to Website
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         DASHBOARD MAIN
+    ========================================================================== -->
+    <div id="dashboardMain" class="dashboard-main">
+      <div class="dashboard-topbar">
+        <div class="flex items-center gap-4">
+          <button type="button" class="nav-toggle hide-desktop" data-dashboard-toggle aria-label="Open dashboard menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div>
+            <h1 style="font-size: var(--fs-2xl);">Overview</h1>
+            <p class="text-muted" style="font-size: var(--fs-sm); margin:0;">Welcome back — here's what's happening today.</p>
+          </div>
+        </div>
+        <button type="button" class="dir-toggle" data-dir-toggle aria-pressed="false" aria-label="Switch to right-to-left layout" title="Switch text direction">LTR</button>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        </button>
+      </div>
+
+      <!-- ==========================================================================
+           OVERVIEW SECTION
+      ========================================================================== -->
+      <section data-dashboard-section="overview">
+        <div class="grid grid-4" style="margin-block-end: var(--space-8);">
+          <div class="stat-card">
+            <div class="stat-card-top"><span class="text-muted" style="font-size:var(--fs-xs); text-transform:uppercase; font-weight:700;">Total Orders</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color:var(--color-accent);"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/></svg></div>
+            <strong>1,284</strong>
+            <span class="trend up">&#9650; 8.4% vs last month</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-top"><span class="text-muted" style="font-size:var(--fs-xs); text-transform:uppercase; font-weight:700;">Pending Quotes</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color:var(--color-accent);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
+            <strong>37</strong>
+            <span class="trend down">&#9660; 3 fewer than yesterday</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-top"><span class="text-muted" style="font-size:var(--fs-xs); text-transform:uppercase; font-weight:700;">Embroidery Requests</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color:var(--color-accent);"><circle cx="12" cy="12" r="10"/></svg></div>
+            <strong>52</strong>
+            <span class="trend up">&#9650; 12 new this week</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-top"><span class="text-muted" style="font-size:var(--fs-xs); text-transform:uppercase; font-weight:700;">Active Customers</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color:var(--color-accent);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+            <strong>1,096</strong>
+            <span class="trend up">&#9650; 24 new this month</span>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-block-end: var(--space-8); align-items:stretch;">
+          <div class="chart-card">
+            <h2 class="h3">Monthly Revenue</h2>
+            <div class="bar-chart">
+              <div class="bar" style="height:40%;"><span>Apr</span></div>
+              <div class="bar" style="height:55%;"><span>May</span></div>
+              <div class="bar" style="height:48%;"><span>Jun</span></div>
+              <div class="bar" style="height:70%;"><span>Jul</span></div>
+              <div class="bar" style="height:64%;"><span>Aug</span></div>
+              <div class="bar" style="height:88%;"><span>Sep</span></div>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h2 class="h3">Orders by Industry</h2>
+            <div class="bar-chart">
+              <div class="bar" style="height:60%; background:linear-gradient(180deg, var(--color-accent-light), var(--color-accent));"><span>Corp</span></div>
+              <div class="bar" style="height:45%; background:linear-gradient(180deg, var(--color-accent-light), var(--color-accent));"><span>Hosp</span></div>
+              <div class="bar" style="height:38%; background:linear-gradient(180deg, var(--color-accent-light), var(--color-accent));"><span>Health</span></div>
+              <div class="bar" style="height:72%; background:linear-gradient(180deg, var(--color-accent-light), var(--color-accent));"><span>Indl</span></div>
+              <div class="bar" style="height:30%; background:linear-gradient(180deg, var(--color-accent-light), var(--color-accent));"><span>Retail</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-card" style="margin-block-end: var(--space-8);">
+          <h2 class="h3">Popular Uniform Categories</h2>
+          <ul class="donut-legend">
+            <li><span class="dot" style="background:var(--color-primary);"></span> Polo Shirts — 34%</li>
+            <li><span class="dot" style="background:var(--color-accent);"></span> Healthcare Scrubs — 22%</li>
+            <li><span class="dot" style="background:var(--color-grey-500);"></span> Industrial Workwear — 19%</li>
+            <li><span class="dot" style="background:#1c6e6b;"></span> Hospitality Uniforms — 15%</li>
+            <li><span class="dot" style="background:var(--color-grey-300);"></span> Corporate Jackets — 10%</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           ORDERS SECTION
+      ========================================================================== -->
+      <section data-dashboard-section="orders" hidden>
+        <div class="flex items-center justify-between gap-4" style="margin-block-end: var(--space-5); flex-wrap:wrap;">
+          <h2 style="font-size:var(--fs-xl);">Orders</h2>
+          <label for="ordersSearch" class="visually-hidden">Search orders</label>
+          <input type="search" id="ordersSearch" class="input" placeholder="Search orders&hellip;" style="max-width:260px;" data-table-search="ordersTable">
+        </div>
+        <div class="table-wrap" id="ordersTable">
+          <table class="data-table table-responsive-cards">
+            <thead><tr><th>Order ID</th><th>Customer</th><th>Industry</th><th>Uniform</th><th>Qty</th><th>Status</th><th>Amount</th><th>Date</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Order ID">#TM-3021</td><td data-label="Customer">Northside Hospitality Group</td><td data-label="Industry">Hospitality</td><td data-label="Uniform">Chef Jacket</td><td data-label="Qty">45</td><td data-label="Status"><span class="status-pill badge-success">Shipped</span></td><td data-label="Amount">$1,530.00</td><td data-label="Date">Sep 08, 2026</td></tr>
+              <tr><td data-label="Order ID">#TM-3022</td><td data-label="Customer">Bright River Health Partners</td><td data-label="Industry">Healthcare</td><td data-label="Uniform">Scrub Set</td><td data-label="Qty">240</td><td data-label="Status"><span class="status-pill badge-info">In Production</span></td><td data-label="Amount">$7,680.00</td><td data-label="Date">Sep 10, 2026</td></tr>
+              <tr><td data-label="Order ID">#TM-3023</td><td data-label="Customer">Ironvale Construction</td><td data-label="Industry">Construction</td><td data-label="Uniform">Hi-Vis Jacket</td><td data-label="Qty">80</td><td data-label="Status"><span class="status-pill badge-warning">Embroidery</span></td><td data-label="Amount">$4,640.00</td><td data-label="Date">Sep 11, 2026</td></tr>
+              <tr><td data-label="Order ID">#TM-3024</td><td data-label="Customer">Fieldstone Retail Co.</td><td data-label="Industry">Retail</td><td data-label="Uniform">Team Polo</td><td data-label="Qty">60</td><td data-label="Status"><span class="status-pill badge-neutral">Quality Check</span></td><td data-label="Amount">$960.00</td><td data-label="Date">Sep 12, 2026</td></tr>
+              <tr><td data-label="Order ID">#TM-3025</td><td data-label="Customer">Vantage Logistics Co.</td><td data-label="Industry">Logistics</td><td data-label="Uniform">Hi-Vis Vest</td><td data-label="Qty">120</td><td data-label="Status"><span class="status-pill badge-outline">Quote Requested</span></td><td data-label="Amount">$5,760.00</td><td data-label="Date">Sep 13, 2026</td></tr>
+              <tr><td data-label="Order ID">#TM-3026</td><td data-label="Customer">Coastal Kitchen Group</td><td data-label="Industry">Hospitality</td><td data-label="Uniform">Front-of-House Shirt</td><td data-label="Qty">36</td><td data-label="Status"><span class="status-pill badge-success">Completed</span></td><td data-label="Amount">$936.00</td><td data-label="Date">Sep 05, 2026</td></tr>
+              <tr><td data-label="Order ID">#TM-3027</td><td data-label="Customer">Summit Corporate Offices</td><td data-label="Industry">Corporate</td><td data-label="Uniform">Softshell Jacket</td><td data-label="Qty">28</td><td data-label="Status"><span class="status-pill" style="background:var(--color-danger-bg); color:var(--color-danger);">Cancelled</span></td><td data-label="Amount">$1,904.00</td><td data-label="Date">Sep 02, 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           QUOTES SECTION
+      ========================================================================== -->
+      <section data-dashboard-section="quotes" hidden>
+        <h2 style="font-size:var(--fs-xl); margin-block-end: var(--space-5);">Quotes</h2>
+        <div class="table-wrap">
+          <table class="data-table table-responsive-cards">
+            <thead><tr><th>Quote ID</th><th>Company</th><th>Industry</th><th>Quantity</th><th>Product</th><th>Status</th><th>Date</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Quote ID">#Q-1180</td><td data-label="Company">Maple Street Diner</td><td data-label="Industry">Hospitality</td><td data-label="Quantity">18</td><td data-label="Product">Chef Jacket</td><td data-label="Status"><span class="status-pill badge-outline">Requested</span></td><td data-label="Date">Sep 13, 2026</td></tr>
+              <tr><td data-label="Quote ID">#Q-1181</td><td data-label="Company">Bright River Health Partners</td><td data-label="Industry">Healthcare</td><td data-label="Quantity">300</td><td data-label="Product">Scrub Set</td><td data-label="Status"><span class="status-pill badge-success">Approved</span></td><td data-label="Date">Sep 12, 2026</td></tr>
+              <tr><td data-label="Quote ID">#Q-1182</td><td data-label="Company">Granite Peak Builders</td><td data-label="Industry">Construction</td><td data-label="Quantity">95</td><td data-label="Product">Hi-Vis Vest</td><td data-label="Status"><span class="status-pill badge-warning">Under Review</span></td><td data-label="Date">Sep 11, 2026</td></tr>
+              <tr><td data-label="Quote ID">#Q-1183</td><td data-label="Company">Fieldstone Retail Co.</td><td data-label="Industry">Retail</td><td data-label="Quantity">60</td><td data-label="Product">Team Polo</td><td data-label="Status"><span class="status-pill badge-success">Approved</span></td><td data-label="Date">Sep 09, 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           CUSTOMERS SECTION
+      ========================================================================== -->
+      <section data-dashboard-section="customers" hidden>
+        <h2 style="font-size:var(--fs-xl); margin-block-end: var(--space-5);">Customers</h2>
+        <div class="table-wrap">
+          <table class="data-table table-responsive-cards">
+            <thead><tr><th>Company</th><th>Industry</th><th>Contact</th><th>Orders</th><th>Lifetime Value</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Company">Northside Hospitality Group</td><td data-label="Industry">Hospitality</td><td data-label="Contact">Maria Petrov</td><td data-label="Orders">14</td><td data-label="Lifetime Value">$28,400</td><td data-label="Status"><span class="status-pill badge-success">Active</span></td></tr>
+              <tr><td data-label="Company">Bright River Health Partners</td><td data-label="Industry">Healthcare</td><td data-label="Contact">James Kim</td><td data-label="Orders">9</td><td data-label="Lifetime Value">$41,200</td><td data-label="Status"><span class="status-pill badge-success">Active</span></td></tr>
+              <tr><td data-label="Company">Ironvale Construction</td><td data-label="Industry">Construction</td><td data-label="Contact">Sandra Boone</td><td data-label="Orders">6</td><td data-label="Lifetime Value">$19,850</td><td data-label="Status"><span class="status-pill badge-success">Active</span></td></tr>
+              <tr><td data-label="Company">Vantage Logistics Co.</td><td data-label="Industry">Logistics</td><td data-label="Contact">Diane Alvarez</td><td data-label="Orders">3</td><td data-label="Lifetime Value">$8,760</td><td data-label="Status"><span class="status-pill badge-outline">New</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           PRODUCTS SECTION
+      ========================================================================== -->
+      <section data-dashboard-section="products" hidden>
+        <h2 style="font-size:var(--fs-xl); margin-block-end: var(--space-5);">Products</h2>
+        <div class="table-wrap">
+          <table class="data-table table-responsive-cards">
+            <thead><tr><th>Product</th><th>Industry</th><th>Active SKUs</th><th>Units Sold (30d)</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Product">Executive Corporate Polo</td><td data-label="Industry">Corporate</td><td data-label="Active SKUs">18</td><td data-label="Units Sold (30d)">642</td><td data-label="Status"><span class="status-pill badge-success">In Stock</span></td></tr>
+              <tr><td data-label="Product">Healthcare Scrub Set</td><td data-label="Industry">Healthcare</td><td data-label="Active SKUs">24</td><td data-label="Units Sold (30d)">890</td><td data-label="Status"><span class="status-pill badge-success">In Stock</span></td></tr>
+              <tr><td data-label="Product">High-Visibility Workwear Jacket</td><td data-label="Industry">Industrial</td><td data-label="Active SKUs">9</td><td data-label="Units Sold (30d)">215</td><td data-label="Status"><span class="status-pill badge-warning">Low Stock</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           EMBROIDERY REQUESTS SECTION
+      ========================================================================== -->
+      <section data-dashboard-section="embroidery" hidden>
+        <h2 style="font-size:var(--fs-xl); margin-block-end: var(--space-5);">Embroidery Requests</h2>
+        <div class="table-wrap">
+          <table class="data-table table-responsive-cards">
+            <thead><tr><th>Request ID</th><th>Company</th><th>Logo</th><th>Garment</th><th>Placement</th><th>Quantity</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Request ID">#E-772</td><td data-label="Company">Maple Street Diner</td><td data-label="Logo">logo-final.png</td><td data-label="Garment">Chef Jacket</td><td data-label="Placement">Left Chest</td><td data-label="Quantity">18</td><td data-label="Status"><span class="status-pill badge-outline">Awaiting Proof</span></td></tr>
+              <tr><td data-label="Request ID">#E-773</td><td data-label="Company">Bright River Health Partners</td><td data-label="Logo">brh-logo.svg</td><td data-label="Garment">Scrub Set</td><td data-label="Placement">Left Chest</td><td data-label="Quantity">300</td><td data-label="Status"><span class="status-pill badge-success">Proof Approved</span></td></tr>
+              <tr><td data-label="Request ID">#E-774</td><td data-label="Company">Granite Peak Builders</td><td data-label="Logo">gpb-mark.pdf</td><td data-label="Garment">Hi-Vis Vest</td><td data-label="Placement">Back</td><td data-label="Quantity">95</td><td data-label="Status"><span class="status-pill badge-warning">In Digitization</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           MESSAGES SECTION
+      ========================================================================== -->
+      <section data-dashboard-section="messages" hidden>
+        <h2 style="font-size:var(--fs-xl); margin-block-end: var(--space-5);">Messages</h2>
+        <div class="card" style="padding: var(--space-6);">
+          <p class="text-muted">Contact form and quote request submissions will appear here once connected to your form backend (Formspree / Netlify Forms).</p>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           REPORTS SECTION
+      ========================================================================== -->
+      <section data-dashboard-section="reports" hidden>
+        <h2 style="font-size:var(--fs-xl); margin-block-end: var(--space-5);">Reports</h2>
+        <div class="grid grid-2">
+          <div class="chart-card"><h3>Revenue (Last 6 Months)</h3><div class="bar-chart"><div class="bar" style="height:40%;"><span>Apr</span></div><div class="bar" style="height:55%;"><span>May</span></div><div class="bar" style="height:48%;"><span>Jun</span></div><div class="bar" style="height:70%;"><span>Jul</span></div><div class="bar" style="height:64%;"><span>Aug</span></div><div class="bar" style="height:88%;"><span>Sep</span></div></div></div>
+          <div class="chart-card"><h3>Orders Fulfilled</h3><div class="bar-chart"><div class="bar" style="height:50%; background:linear-gradient(180deg, var(--color-accent-light), var(--color-accent));"><span>Apr</span></div><div class="bar" style="height:62%; background:linear-gradient(180deg, var(--color-accent-light), var(--color-accent));"><span>May</span></div><div class="bar" style="height:58%; background:linear-gradient(180deg, var(--color-accent-light), var(--color-accent));"><span>Jun</span></div><div class="bar" style="height:80%; background:linear-gradient(180deg, var(--color-accent-light), var(--color-accent));"><span>Jul</span></div><div class="bar" style="height:75%; background:linear-gradient(180deg, var(--color-accent-light), var(--color-accent));"><span>Aug</span></div><div class="bar" style="height:92%; background:linear-gradient(180deg, var(--color-accent-light), var(--color-accent));"><span>Sep</span></div></div></div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SETTINGS SECTION
+      ========================================================================== -->
+      <section data-dashboard-section="settings" hidden>
+        <h2 style="font-size:var(--fs-xl); margin-block-end: var(--space-5);">Settings</h2>
+        <div class="card" style="padding: var(--space-8); max-width: 560px;">
+          <div class="field">
+            <label for="settingsCompanyName">Company Display Name</label>
+            <input type="text" id="settingsCompanyName" class="input" value="ThreadMark Workwear">
+          </div>
+          <div class="field" style="margin-top: var(--space-5);">
+            <label for="settingsSupportEmail">Support Email</label>
+            <input type="email" id="settingsSupportEmail" class="input" value="sales@threadmarkworkwear.com">
+          </div>
+          <button type="button" class="btn btn-primary" style="margin-top: var(--space-6);" onclick="window.TM.showToast({type:'success', title:'Settings saved', message:'Your changes have been saved.'})">Save Changes</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

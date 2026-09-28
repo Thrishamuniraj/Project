@@ -1,0 +1,11 @@
+<svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="prodHiVisTitle">
+  <title id="prodHiVisTitle">Product illustration of High-Visibility Workwear with reflective safety stripes</title>
+  <rect width="480" height="480" fill="#eef1f5"/>
+  <g transform="translate(135,70)">
+    <path d="M15 35 Q15 5 60 0 L100 30 L140 0 Q185 5 185 35 L205 90 L180 105 L180 320 L20 320 L20 105 L-5 90 Z" fill="#e2661f"/>
+    <rect x="20" y="150" width="160" height="18" fill="#f4f6f8"/>
+    <rect x="20" y="210" width="160" height="18" fill="#f4f6f8"/>
+    <rect x="97" y="10" width="6" height="300" fill="#c25315"/>
+    <rect x="150" y="60" width="30" height="24" rx="3" fill="#343a40"/>
+  </g>
+</svg>

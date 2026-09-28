@@ -1,0 +1,8 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fabCottonTitle">
+  <title id="fabCottonTitle">Close-up woven texture swatch of cotton-polyester blend fabric</title>
+  <rect width="240" height="240" fill="#dfe3ea"/>
+  <g stroke="#c7ccd4" stroke-width="2">
+    <path d="M0 20 H240 M0 50 H240 M0 80 H240 M0 110 H240 M0 140 H240 M0 170 H240 M0 200 H240"/>
+    <path d="M20 0 V240 M50 0 V240 M80 0 V240 M110 0 V240 M140 0 V240 M170 0 V240 M200 0 V240"/>
+  </g>
+</svg>

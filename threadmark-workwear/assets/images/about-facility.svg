@@ -1,0 +1,32 @@
+<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="aboutFacilityTitle">
+  <title id="aboutFacilityTitle">Illustration of the ThreadMark embroidery production floor with machines and uniform racks</title>
+  <rect width="640" height="480" fill="#eef1f5"/>
+  <rect x="0" y="360" width="640" height="120" fill="#dfe3ea"/>
+  <!-- embroidery machines -->
+  <g transform="translate(60,200)">
+    <rect width="160" height="110" rx="8" fill="#c7ccd4"/>
+    <rect x="14" y="16" width="132" height="50" rx="4" fill="#0e2a4a"/>
+    <circle cx="40" cy="90" r="10" fill="#9aa3b0"/>
+    <circle cx="80" cy="90" r="10" fill="#9aa3b0"/>
+    <circle cx="120" cy="90" r="10" fill="#9aa3b0"/>
+  </g>
+  <g transform="translate(260,180)">
+    <rect width="180" height="130" rx="8" fill="#b7bec9"/>
+    <rect x="16" y="18" width="148" height="60" rx="4" fill="#081b30"/>
+    <circle cx="40" cy="106" r="10" fill="#8a919c"/>
+    <circle cx="90" cy="106" r="10" fill="#8a919c"/>
+    <circle cx="140" cy="106" r="10" fill="#8a919c"/>
+  </g>
+  <!-- uniform rack -->
+  <g transform="translate(490,150)">
+    <rect x="0" y="0" width="6" height="200" fill="#6b7280"/>
+    <rect x="110" y="0" width="6" height="200" fill="#6b7280"/>
+    <rect x="0" y="0" width="116" height="6" fill="#6b7280"/>
+    <g fill="#0e2a4a"><rect x="10" y="10" width="20" height="50" rx="4"/></g>
+    <g fill="#e2661f"><rect x="38" y="10" width="20" height="50" rx="4"/></g>
+    <g fill="#c7ccd4"><rect x="66" y="10" width="20" height="50" rx="4"/></g>
+    <g fill="#1c6e6b"><rect x="94" y="10" width="20" height="50" rx="4"/></g>
+  </g>
+  <rect x="0" y="0" width="640" height="60" fill="#ffffff"/>
+  <circle cx="40" cy="30" r="10" fill="#f4c542"/>
+</svg>

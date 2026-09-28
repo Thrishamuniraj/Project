@@ -1,0 +1,11 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="blogDigiTitle">
+  <title id="blogDigiTitle">Illustration of a logo being digitized into an embroidery stitch file on screen</title>
+  <rect width="480" height="300" fill="#0e2a4a"/>
+  <rect x="130" y="60" width="220" height="150" rx="10" fill="#132f4f" stroke="#274b74" stroke-width="2"/>
+  <rect x="150" y="80" width="180" height="90" fill="#0a1f36"/>
+  <path d="M190 130 H270" stroke="#f2894a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M230 100 V160" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+  <g stroke="#f2894a" stroke-width="2" stroke-dasharray="1 6"><path d="M190 130 H270 M230 100 V160"/></g>
+  <rect x="150" y="80" width="180" height="90" fill="none" stroke="#3a6ea8" stroke-width="1"/>
+  <rect x="200" y="220" width="80" height="14" rx="7" fill="#274b74"/>
+</svg>

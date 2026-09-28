@@ -1,0 +1,5 @@
+# macOS / editor / local tooling
+.DS_Store
+.claude/
+__pycache__/
+*.pyc

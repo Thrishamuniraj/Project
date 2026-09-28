@@ -1,0 +1,14 @@
+<svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="prodChefTitle">
+  <title id="prodChefTitle">Product illustration of a white double-breasted Hospitality Chef Jacket</title>
+  <rect width="480" height="480" fill="#f7f8fa"/>
+  <g transform="translate(140,90)">
+    <path d="M10 30 Q10 5 45 0 L90 20 L135 0 Q170 5 170 30 L155 300 L25 300 Z" fill="#ffffff" stroke="#dfe3ea" stroke-width="2"/>
+    <circle cx="60" cy="55" r="5" fill="#cbd1d9"/>
+    <circle cx="60" cy="90" r="5" fill="#cbd1d9"/>
+    <circle cx="60" cy="125" r="5" fill="#cbd1d9"/>
+    <circle cx="120" cy="55" r="5" fill="#cbd1d9"/>
+    <circle cx="120" cy="90" r="5" fill="#cbd1d9"/>
+    <circle cx="120" cy="125" r="5" fill="#cbd1d9"/>
+    <rect x="70" y="160" width="30" height="24" rx="4" fill="#e2661f"/>
+  </g>
+</svg>

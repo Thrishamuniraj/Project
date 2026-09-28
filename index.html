@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Website Template Collection | Five Business Websites</title>
+  <meta name="description" content="Five responsive static business website templates: BPO services, label printing, workwear embroidery, branded merchandise and trade show booth building.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f5eff'/%3E%3Cpath d='M16 20h32v6H16zm0 12h32v6H16zm0 12h20v6H16z' fill='%23fff'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #ffffff; --bg-alt: #f5f6f8; --surface: #ffffff; --text: #151a22; --muted: #5a6473;
+      --border: #e3e6eb; --accent: #1f5eff; --accent-text: #ffffff; --shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 12px 32px rgba(16, 24, 40, .08);
+      --radius: 16px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0d0f13; --bg-alt: #14171c; --surface: #181b21; --text: #eef1f5; --muted: #a2abb8; --border: #2a2f37; --accent: #6f98ff; --accent-text: #0d0f13; --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px rgba(0, 0, 0, .35); }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .skip { position: absolute; inset-inline-start: 16px; top: -48px; padding: 8px 14px; border-radius: 8px; background: var(--accent); color: var(--accent-text); text-decoration: none; }
+    .skip:focus { top: 16px; }
+    .wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+    header.hero { padding: clamp(56px, 9vw, 104px) 0 clamp(40px, 6vw, 64px); background: var(--bg-alt); border-bottom: 1px solid var(--border); }
+    .eyebrow { display: inline-block; margin: 0 0 14px; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+    h1 { margin: 0; max-width: 18ch; font-size: clamp(2rem, 1.2rem + 3.4vw, 3.4rem); line-height: 1.1; letter-spacing: -.02em; }
+    .lead { margin: 18px 0 0; max-width: 62ch; font-size: clamp(1rem, .95rem + .3vw, 1.15rem); color: var(--muted); }
+    .facts { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 28px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .92rem; }
+    .facts li::before { content: "✓"; margin-inline-end: 8px; color: var(--accent); font-weight: 700; }
+    main { padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 8vw, 96px); }
+    .grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); margin: 0; padding: 0; list-style: none; }
+    .card { display: flex; flex-direction: column; height: 100%; overflow: hidden; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease; }
+    .card:hover { transform: translateY(-3px); }
+    .card__media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--bg-alt); }
+    .card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card__tag { position: absolute; inset-inline-start: 14px; top: 14px; padding: 4px 10px; border-radius: 999px; background: rgba(13, 15, 19, .72); color: #fff; font-size: .75rem; font-weight: 600; letter-spacing: .02em; }
+    .card__body { display: flex; flex-direction: column; flex: 1; gap: 12px; padding: 22px 22px 24px; }
+    .card__brand { display: flex; align-items: center; gap: 12px; }
+    .card__brand img { width: 40px; height: 40px; flex: none; }
+    .card h2 { margin: 0; font-size: 1.2rem; line-height: 1.25; }
+    .card h2 span { display: block; font-size: .82rem; font-weight: 500; color: var(--muted); }
+    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .card__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 6px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 18px; border-radius: 10px; border: 1px solid var(--border); font-weight: 600; font-size: .92rem; text-decoration: none; transition: background-color .2s ease, border-color .2s ease; }
+    .btn--primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+    .btn--primary:hover { filter: brightness(1.08); }
+    .btn--ghost:hover { border-color: var(--accent); }
+    .btn:focus-visible, .skip:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    footer { padding: 28px 0 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: .88rem; }
+    @media (prefers-reduced-motion: reduce) { .card, .btn { transition: none; } .card:hover { transform: none; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#sites">Skip to the websites</a>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Static website templates</p>
+      <h1>Five business websites, each built around its own industry.</h1>
+      <p class="lead">Every site has two distinct homepages, a full set of inner pages, light and dark themes, a left-to-right / right-to-left toggle and a responsive layout — built with plain HTML, CSS and JavaScript.</p>
+      <ul class="facts">
+        <li>Home 1 and Home 2 per site</li>
+        <li>Dark / light mode</li>
+        <li>LTR / RTL support</li>
+        <li>Mobile-first, WCAG 2.1 AA</li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="sites">
+    <div class="wrap">
+      <ul class="grid">
+        <li>
+          <article class="card">
+            <div class="card__media"><img src="bpo-company/assets/images/photos/bpo-hero-agent.webp" alt="Support agent wearing a headset at his workstation" width="1100" height="856" loading="lazy"><span class="card__tag">Business services</span></div>
+            <div class="card__body">
+              <div class="card__brand"><img src="bpo-company/assets/images/logo-mark.svg" alt="" width="40" height="40"><h2>Alturis Global Services <span>Business process outsourcing</span></h2></div>
+              <p>A global BPO partner delivering customer support, back-office processing and data management with 24/7 scalable operations.</p>
+              <div class="card__actions"><a class="btn btn--primary" href="bpo-company/">Open website</a><a class="btn btn--ghost" href="bpo-company/pages/home-2.html">Home 2</a></div>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <div class="card__media"><img src="label-sticker-printing/assets/images/photos/lbl-qr-jars.webp" alt="Glass jars with printed product labels" width="900" height="1125" loading="lazy"><span class="card__tag">Printing</span></div>
+            <div class="card__body">
+              <div class="card__brand"><img src="label-sticker-printing/assets/images/logo-mark.svg" alt="" width="40" height="40"><h2>Printora Labels <span>Custom label &amp; sticker printing</span></h2></div>
+              <p>Custom labels and stickers for products, packaging and brands — waterproof, vinyl, paper and die-cut, with free proofs and bulk pricing.</p>
+              <div class="card__actions"><a class="btn btn--primary" href="label-sticker-printing/">Open website</a><a class="btn btn--ghost" href="label-sticker-printing/pages/home-2.html">Home 2</a></div>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <div class="card__media"><img src="threadmark-workwear/assets/images/photos/tm-hero-crew.webp" alt="Site crew in matching high-visibility vests" width="1100" height="963" loading="lazy"><span class="card__tag">Uniforms &amp; workwear</span></div>
+            <div class="card__body">
+              <div class="card__brand"><img src="threadmark-workwear/assets/images/logo-mark.svg" alt="" width="40" height="40"><h2>ThreadMark Workwear <span>Embroidered uniforms</span></h2></div>
+              <p>Embroidered corporate uniforms, polo shirts, jackets and industrial workwear for teams of any size, with a free embroidery proof first.</p>
+              <div class="card__actions"><a class="btn btn--primary" href="threadmark-workwear/">Open website</a><a class="btn btn--ghost" href="threadmark-workwear/pages/home-2.html">Home 2</a></div>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <div class="card__media"><img src="brandcraft-merchandise/assets/images/photos/bc-h2-gifting.webp" alt="Corporate gift box with a gold-foil client logo" width="1000" height="750" loading="lazy"><span class="card__tag">Branded merchandise</span></div>
+            <div class="card__body">
+              <div class="card__brand"><img src="brandcraft-merchandise/assets/images/logo-mark.svg" alt="" width="40" height="40"><h2>BrandCraft Merchandise <span>Promotional products &amp; gifting</span></h2></div>
+              <p>Branded apparel, drinkware and tech accessories for corporate teams and events, with custom logo branding and bulk pricing.</p>
+              <div class="card__actions"><a class="btn btn--primary" href="brandcraft-merchandise/">Open website</a><a class="btn btn--ghost" href="brandcraft-merchandise/pages/home-2.html">Home 2</a></div>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <div class="card__media"><img src="trade-show-booth-builder/assets/images/photos/sf-hero-stand.webp" alt="Custom exhibition stand on a busy show floor" width="1400" height="1050" loading="lazy"><span class="card__tag">Exhibitions</span></div>
+            <div class="card__body">
+              <div class="card__brand"><img src="trade-show-booth-builder/assets/images/logo-mark.svg" alt="" width="40" height="40"><h2>Standform Exhibition Studio <span>Trade show booth builder</span></h2></div>
+              <p>Custom trade show booths and exhibition stands designed, built and installed by one team — island, inline, peninsula and rental stands.</p>
+              <div class="card__actions"><a class="btn btn--primary" href="trade-show-booth-builder/">Open website</a><a class="btn btn--ghost" href="trade-show-booth-builder/pages/home-2.html">Home 2</a></div>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">All businesses, people and figures on these websites are fictional demo content.</div>
+  </footer>
+</body>
+</html>

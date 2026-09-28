@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ThreadMark Workwear favicon">
+  <rect width="64" height="64" rx="14" fill="#0e2a4a"/>
+  <!-- Embroidered "T": satin-stitch crossbar + running-stitch stem -->
+  <path d="M15 20.5 H43" stroke="#f2894a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M29 26 V50" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-dasharray="5.5 4"/>
+  <!-- Needle with its eye, trailing the orange thread back to the crossbar -->
+  <path d="M40 50 L52 17" stroke="#cfd8e3" stroke-width="2.6" stroke-linecap="round"/>
+  <ellipse cx="51" cy="20" rx="1.1" ry="2.3" transform="rotate(20 51 20)" fill="#0e2a4a"/>
+  <path d="M51.5 21 C 56 30, 50 36, 43 23" fill="none" stroke="#f2894a" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,114 @@
+/* =========================================================
+   BrandCraft Merchandise — Dark Mode
+   Applies when the OS prefers dark AND the user hasn't chosen
+   "light" explicitly, OR when data-theme="dark" is set (manual toggle).
+   Neutral near-black surfaces with dark-grey alternates (brand accents unchanged).
+   ========================================================= */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #0c0d10;
+    --color-bg-alt: #131519;
+    --color-surface: #16181d;
+    --color-surface-raised: #1c1f25;
+    --color-border: #2b2f37;
+    --color-text: #eef2f6;
+    --color-text-muted: #a7aeb9;
+    --color-text-inverse: #0c0d10;
+    --color-primary: #dbe6f2;
+    --color-primary-strong: #eef2f6;
+    --color-primary-soft: #4a7ba8;
+    --color-accent: #ff7a4d;
+    --color-accent-strong: #ff9068;
+    --color-accent-soft: rgba(255,122,77,0.14);
+    --color-header-bg: rgba(12,13,16,0.85);
+    --color-focus-ring: #6ea8e0;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+    --shadow-md: 0 8px 20px rgba(0,0,0,0.4);
+    --shadow-lg: 0 20px 48px rgba(0,0,0,0.5);
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #0c0d10;
+  --color-bg-alt: #131519;
+  --color-surface: #16181d;
+  --color-surface-raised: #1c1f25;
+  --color-border: #2b2f37;
+  --color-text: #eef2f6;
+  --color-text-muted: #a7aeb9;
+  --color-text-inverse: #0c0d10;
+  --color-primary: #dbe6f2;
+  --color-primary-strong: #eef2f6;
+  --color-primary-soft: #4a7ba8;
+  --color-accent: #ff7a4d;
+  --color-accent-strong: #ff9068;
+  --color-accent-soft: rgba(255,122,77,0.14);
+  --color-header-bg: rgba(12,13,16,0.85);
+  --color-focus-ring: #6ea8e0;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 8px 20px rgba(0,0,0,0.4);
+  --shadow-lg: 0 20px 48px rgba(0,0,0,0.5);
+}
+
+/* Component-level adjustments that aren't pure token swaps */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .btn-primary { background: var(--color-primary-soft); color: var(--color-bg); }
+  :root:not([data-theme="light"]) .btn-primary:hover { background: var(--color-accent); }
+  :root:not([data-theme="light"]) .btn-outline { color: var(--color-text); }
+  :root:not([data-theme="light"]) .btn-outline:hover { background: var(--color-surface-raised); color: var(--color-text); }
+  :root:not([data-theme="light"]) .collage-tile.tile-1,
+  :root:not([data-theme="light"]) .collage-tile.tile-6 { background: var(--color-surface-raised); }
+  :root:not([data-theme="light"]) .category-card { background: var(--color-surface-raised); }
+  :root:not([data-theme="light"]) .category-card.card-accent { background: var(--color-accent); }
+  :root:not([data-theme="light"]) .category-card.card-accent p,
+  :root:not([data-theme="light"]) .category-card.card-accent h3 { color: var(--color-bg); }
+  :root:not([data-theme="light"]) .cta-band,
+  :root:not([data-theme="light"]) .estimator-result,
+  :root:not([data-theme="light"]) .site-footer,
+  :root:not([data-theme="light"]) .header-utility,
+  :root:not([data-theme="light"]) .section-dark { background: var(--color-surface-raised); }
+  :root:not([data-theme="light"]) .workflow-step-btn[aria-selected="true"] { background: var(--color-primary-soft); }
+  :root:not([data-theme="light"]) .skeleton { background: linear-gradient(90deg, var(--color-surface) 25%, var(--color-border) 50%, var(--color-surface) 75%); background-size: 200% 100%; }
+}
+
+:root[data-theme="dark"] .btn-primary { background: var(--color-primary-soft); color: var(--color-bg); }
+:root[data-theme="dark"] .btn-primary:hover { background: var(--color-accent); }
+:root[data-theme="dark"] .btn-outline { color: var(--color-text); }
+:root[data-theme="dark"] .btn-outline:hover { background: var(--color-surface-raised); color: var(--color-text); }
+:root[data-theme="dark"] .collage-tile.tile-1,
+:root[data-theme="dark"] .collage-tile.tile-6 { background: var(--color-surface-raised); }
+:root[data-theme="dark"] .category-card { background: var(--color-surface-raised); }
+:root[data-theme="dark"] .category-card.card-accent { background: var(--color-accent); }
+:root[data-theme="dark"] .category-card.card-accent p,
+:root[data-theme="dark"] .category-card.card-accent h3 { color: var(--color-bg); }
+:root[data-theme="dark"] .cta-band,
+:root[data-theme="dark"] .estimator-result,
+:root[data-theme="dark"] .site-footer,
+:root[data-theme="dark"] .header-utility,
+:root[data-theme="dark"] .section-dark { background: var(--color-surface-raised); }
+:root[data-theme="dark"] .workflow-step-btn[aria-selected="true"] { background: var(--color-primary-soft); }
+:root[data-theme="dark"] .skeleton { background: linear-gradient(90deg, var(--color-surface) 25%, var(--color-border) 50%, var(--color-surface) 75%); background-size: 200% 100%; }
+
+
+/* Revision 2: surfaces that used --color-primary-strong (which turns near-white in dark mode) as a fill */
+:root[data-theme="dark"] .skip-link,
+:root[data-theme="dark"] .pagination .is-current,
+:root[data-theme="dark"] .toast,
+:root[data-theme="dark"] .chip-select input:checked + label { background: #1c4e78; border-color: #1c4e78; color: #fff; }
+:root[data-theme="dark"] .category-card.has-photo { background: var(--cat-bg); }
+:root[data-theme="dark"] .category-card.has-photo:not(.card-outline) h3 { color: #fff; }
+:root[data-theme="dark"] .category-card.has-photo:not(.card-outline) p { color: rgba(255, 255, 255, 0.84); }
+:root[data-theme="dark"] .category-card.has-photo:not(.card-outline) { --cat-bg: #0e2740; }
+:root[data-theme="dark"] .category-card.has-photo.card-accent { --cat-bg: #b5461f; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .skip-link,
+  :root:not([data-theme="light"]) .pagination .is-current,
+  :root:not([data-theme="light"]) .toast,
+  :root:not([data-theme="light"]) .chip-select input:checked + label { background: #1c4e78; border-color: #1c4e78; color: #fff; }
+  :root:not([data-theme="light"]) .category-card.has-photo { background: var(--cat-bg); }
+  :root:not([data-theme="light"]) .category-card.has-photo:not(.card-outline) h3 { color: #fff; }
+  :root:not([data-theme="light"]) .category-card.has-photo:not(.card-outline) p { color: rgba(255, 255, 255, 0.84); }
+  :root:not([data-theme="light"]) .category-card.has-photo:not(.card-outline) { --cat-bg: #0e2740; }
+  :root:not([data-theme="light"]) .category-card.has-photo.card-accent { --cat-bg: #b5461f; }
+}

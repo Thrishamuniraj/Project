@@ -1,0 +1,21 @@
+<svg viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="indConstTitle">
+  <title id="indConstTitle">Illustration of a construction worker wearing a yellow hard hat and reinforced work jacket</title>
+  <defs>
+    <linearGradient id="gConst" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8a6a1c"/>
+      <stop offset="1" stop-color="#2e2410"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="480" fill="url(#gConst)"/>
+  <g transform="translate(180,300)">
+    <path d="M-110 180 L-100 40 Q-100 -20 0 -30 Q100 -20 100 40 L110 180 Z" fill="#6b4a2b"/>
+    <rect x="-100" y="60" width="200" height="16" fill="#f4c542"/>
+    <path d="M-30 -20 L30 -20 L20 60 L-20 60 Z" fill="#343a40"/>
+    <rect x="-8" y="60" width="16" height="90" fill="#4b5159"/>
+  </g>
+  <g transform="translate(180,110)">
+    <circle cx="0" cy="34" r="56" fill="#c98a5e"/>
+    <path d="M-52 6 Q0 -46 52 6 Q52 -20 0 -30 Q-52 -20 -52 6 Z" fill="#f4c542"/>
+    <rect x="-56" y="0" width="112" height="10" rx="5" fill="#c9a02a"/>
+  </g>
+</svg>

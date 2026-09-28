@@ -1,0 +1,8 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="blogDurTitle">
+  <title id="blogDurTitle">Illustration of a rugged work jacket fabric weave under magnification</title>
+  <rect width="480" height="300" fill="#343a40"/>
+  <circle cx="240" cy="150" r="110" fill="#4b5159"/>
+  <g stroke="#5c636c" stroke-width="4"><path d="M130 100 H350 M130 150 H350 M130 200 H350"/></g>
+  <g stroke="#22262b" stroke-width="2"><path d="M130 75 H350 M130 125 H350 M130 175 H350 M130 225 H350"/></g>
+  <circle cx="240" cy="150" r="110" fill="none" stroke="#e2661f" stroke-width="4"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="team4Title">
+  <title id="team4Title">Portrait illustration of Sofia Kowalski, Quality &amp; Fabric Specialist</title>
+  <rect width="320" height="320" fill="#f7f8fa"/>
+  <g transform="translate(160,200)">
+    <path d="M-100 120 L-90 20 Q-90 -30 0 -38 Q90 -30 90 20 L100 120 Z" fill="#1c6e6b"/>
+    <rect x="-16" y="-10" width="32" height="26" rx="4" fill="#f2894a"/>
+  </g>
+  <g transform="translate(160,110)">
+    <circle cx="0" cy="0" r="62" fill="#e6b98a"/>
+    <path d="M-50 -20 Q0 -64 50 -20 Q56 30 40 50 Q50 -8 0 -14 Q-50 -8 -40 50 Q-56 30 -50 -20 Z" fill="#5a3a20"/>
+  </g>
+</svg>

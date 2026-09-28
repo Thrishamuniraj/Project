@@ -1,0 +1,12 @@
+<svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="prodPoloTitle">
+  <title id="prodPoloTitle">Product illustration of the Executive Corporate Polo in navy with an embroidered chest logo</title>
+  <rect width="480" height="480" fill="#f0f1f4"/>
+  <g transform="translate(140,90)">
+    <path d="M10 40 Q10 5 60 0 L90 30 L130 30 L160 0 Q210 5 210 40 L195 90 L175 75 L175 320 L45 320 L45 75 L25 90 Z" fill="#0e2a4a"/>
+    <path d="M60 0 Q110 45 160 0" fill="none" stroke="#1c4571" stroke-width="3"/>
+    <rect x="90" y="30" width="40" height="12" fill="#0a1f36"/>
+    <circle cx="110" cy="55" r="3" fill="#1c4571"/>
+    <circle cx="110" cy="68" r="3" fill="#1c4571"/>
+    <rect x="70" y="90" width="34" height="28" rx="4" fill="#f2894a" stroke="#ffffff" stroke-width="2"/>
+  </g>
+</svg>
