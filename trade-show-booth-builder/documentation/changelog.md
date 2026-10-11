@@ -1,6 +1,25 @@
 # Changelog
 
 
+## 2.3.1 — 2026-10-11
+
+Follow-up fixes after the review corrections.
+
+- Portfolio: the stand photographs added in 2.3.0 showed other exhibitors' real stands, so they were removed; the portfolio and the Home 2 case-study hero use the original concept renders again, and the credits are back to their earlier, accurate wording.
+- Header no longer overflows 320px screens (smaller wordmark and mark below 360px; all three header controls stay 44px).
+- Admin dashboard: KPI cards stack in one column below 420px instead of overflowing.
+- Contact: the consent checkbox has an explicit label ("I agree to be contacted about this enquiry."); the Privacy Policy button moved out of the label into a linked note (`aria-describedby`). The generator audit now reports 0 problems.
+- Social-sharing image (`og-cover.jpg`, and `og-cover.svg` via `build_assets.py`) uses the current logo mark; size unchanged (1200 × 630).
+
+## 2.3.0 — 2026-10-09
+
+Website review corrections (Sep slot 3, first correction).
+
+- Logo refined: the corner-stand mark now stands on a solid accent platform with crisp edges at small sizes, and the wordmark uses weight 800 with tighter tracking (`logo.svg`, `logo-light.svg`, `logo-mark.svg`, `favicon.svg`, and the generator in `tools/generator/layout.py` / `build_assets.py`).
+- Typography: every heading uses weight 600; paragraph-style text (pull quotes, contact details) uses 500 and body copy 400.
+- Home 1: "Why exhibitors choose Standform" trimmed from eight to four points — the four removed points repeated the service cards directly above (their facts remain on the About page).
+- Portfolio images: `build.py` and `portfolio.js` now read each project's image path and alt text from the project data, so a project can switch from its render to a photo by adding one entry to `layout.PHOTO`. The portfolio keeps its original concept renders (see 2.3.1).
+
 ## 2.2.0 — 2026-09-28
 
 Home menu, requirements review and integration points.

@@ -149,9 +149,9 @@ plan('plan-rental', 'Rental stand', 'Pre-engineered kit - reusable, fast to inst
 
 # ---------------------------------------------------------------- brand + decoration
 def booth_mark(fill='#0e1013', accent=OR):
-    """Isometric open-sided stand: floor, back wall, side wall and an accent header fascia."""
-    return ('<path d="M16 27 4 21l12-6 12 6z" fill="%s" opacity=".28"/><path d="M4 21V9l12-6v12z" fill="%s"/>'
-            '<path d="M16 15V3l12 6v12z" fill="%s" opacity=".62"/><path d="M4 9l12-6 12 6-2.4 1.2L16 5.4 6.4 10.2z" fill="%s"/>') % (fill, fill, fill, accent)
+    """Isometric corner stand: back wall and side wall on an accent floor platform (gap keeps edges crisp at small sizes)."""
+    return ('<path d="M16 29.5 3.5 23.25 16 17l12.5 6.25z" fill="%s"/><path d="M3.5 20.5V8.5L16 2.25v12z" fill="%s"/>'
+            '<path d="M16 14.25v-12L28.5 8.5v12z" fill="%s" opacity=".55"/>') % (accent, fill, fill)
 
 
 def mark(fill='#0e1013', accent=OR, size=64):
@@ -160,7 +160,7 @@ def mark(fill='#0e1013', accent=OR, size=64):
 
 save('logo-mark', mark())
 lockup = lambda c: ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40" width="220" height="40" role="img" aria-label="Standform"><g transform="translate(2 4)">%s</g>'
-                    '<text x="44" y="28" font-family="Arial Black,Arial,Helvetica,sans-serif" font-weight="900" font-size="22" letter-spacing="2" fill="%s">STANDFORM</text></svg>' % (booth_mark(c, OR), c))
+                    '<text x="44" y="28" font-family="Archivo,Arial,Helvetica,sans-serif" font-weight="800" font-size="22" letter-spacing="1.3" fill="%s">STANDFORM</text></svg>' % (booth_mark(c, OR), c))
 save('logo', lockup('#0e1013'))
 save('logo-light', lockup('#ffffff'))
 save('favicon', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" fill="#0e1013"/><g transform="translate(3.2 3.2) scale(.8)">%s</g></svg>' % booth_mark('#ffffff', OR))
@@ -171,11 +171,11 @@ S.hero_scene  # keep import used
 hs = S.hero_scene(1200, 630, zoom=.72)
 svg = hs.render('Standform exhibition stand studio')
 svg = svg.replace('</defs>', '</defs><rect width="1200" height="630" fill="#0e1013"/>', 1)
-svg = svg.replace('</svg>', '<g transform="translate(60 70)"><rect x="3" y="3" width="26" height="26" fill="none" stroke="#fff" stroke-width="3"/><rect x="11" y="11" width="10" height="10" fill="%s"/>'
-                  '<text x="48" y="26" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="24" letter-spacing="3" fill="#fff">STANDFORM</text></g>'
+svg = svg.replace('</svg>', '<g transform="translate(60 64)"><g transform="scale(1.25)">' + booth_mark('#ffffff', OR) + '</g>'
+                  '<text x="54" y="29" font-family="Archivo,Arial,Helvetica,sans-serif" font-weight="800" font-size="24" letter-spacing="1.9" fill="#fff">STANDFORM</text></g>'
                   '<text x="60" y="360" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="66" fill="#fff">Stand out</text>'
                   '<text x="60" y="435" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="66" fill="%s">before the show</text>'
-                  '<text x="60" y="510" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="66" fill="#fff">even starts.</text></svg>' % (OR, OR))
+                  '<text x="60" y="510" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="66" fill="#fff">even starts.</text></svg>' % (OR,))
 save('og-cover', svg)
 
 # blueprint tile and floorplan decoration

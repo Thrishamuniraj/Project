@@ -1,6 +1,25 @@
 # Changelog
 
 
+## 2.3.1 — 2026-10-11
+
+Follow-up fixes after the review corrections.
+
+- Services and Case Studies mobile heroes shortened (666px to 547px and 557px to 541px at 375px): slightly tighter mobile padding and the Services jump links in two columns. No content removed; tablet and desktop heights unchanged.
+- Dark mode: primary button hover darkened to `#2565a6` (white text 6.0:1, was 3.8:1).
+- Social-sharing images (`og-cover.jpg`, `og-cover.png`) updated to the current logo mark; size unchanged (1200 × 630).
+
+## 2.3.0 — 2026-10-09
+
+Website review corrections (Sep slot 3, first correction).
+
+- Logo refined: the speech-bubble mark now carries a bold "A" peak with a single amber accent, legible from 16px (`logo.svg`, `logo-mark.svg`, `favicon.svg` and the header/footer mark in `components.js`).
+- Sticky header fixed: the injected header wrapper uses `display: contents` once mounted (the header was confined to its own wrapper) and `body` uses `overflow-x: clip`.
+- Inner-page heroes standardised to the same height (510px on mobile and tablet, 560px on desktop).
+- Home 1: the industry tabs no longer repeat the "Typical challenges" lists from the Industries page (they remain there in full).
+- About: the leadership cards use real portrait photos.
+- Services: each of the twelve Supporting capabilities now shows a relevant photo instead of an icon.
+
 ## 2.2.0 — 2026-09-28
 
 Home menu, requirements review and integration points.

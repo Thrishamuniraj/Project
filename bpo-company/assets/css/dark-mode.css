@@ -6,7 +6,7 @@
    ========================================================================== */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --primary: #2b76c0; --primary-hover: #3a86d1; --on-primary: #ffffff; --primary-text: #8cc3f5; --primary-soft: #12263c;
+  --primary: #2b76c0; --primary-hover: #2565a6; --on-primary: #ffffff; --primary-text: #8cc3f5; --primary-soft: #12263c;
   --secondary: #1a9aa5; --secondary-text: #5cc4c9; --secondary-soft: #0f2c31;
   --accent: #f0a12b; --accent-hover: #f7b24d; --on-accent: #1f1500; --accent-soft: #2b2110;
   --bg: #090c11; --surface: #0e131a; --surface-2: #151c26; --card: #121820;
@@ -19,7 +19,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
   color-scheme: dark;
-  --primary: #2b76c0; --primary-hover: #3a86d1; --on-primary: #ffffff; --primary-text: #8cc3f5; --primary-soft: #12263c;
+  --primary: #2b76c0; --primary-hover: #2565a6; --on-primary: #ffffff; --primary-text: #8cc3f5; --primary-soft: #12263c;
   --secondary: #1a9aa5; --secondary-text: #5cc4c9; --secondary-soft: #0f2c31;
   --accent: #f0a12b; --accent-hover: #f7b24d; --on-accent: #1f1500; --accent-soft: #2b2110;
   --bg: #090c11; --surface: #0e131a; --surface-2: #151c26; --card: #121820;

@@ -1,6 +1,24 @@
 # Changelog
 
 
+## 2.3.1 — 2026-10-11
+
+Follow-up fixes after the review corrections.
+
+- Custom Branding: "Use This Placement in My Request" wraps instead of overflowing 320px screens.
+- Mobile menu: the Home submenu now collapses (`.mobile-nav-sub[hidden]`); it was always expanded.
+- Dark mode: outline buttons on dark sections keep dark text on their white hover fill (contrast was 1.2:1).
+- Social-sharing image (`og-image.jpg`) updated to the current logo mark and accent colour; size unchanged (1200 × 630).
+- In-page links land below the sticky header (`scroll-padding-top`).
+
+## 2.3.0 — 2026-10-09
+
+Website review corrections (Sep slot 3, first correction).
+
+- New visual identity so BrandCraft no longer reads as a recolour of ThreadMark: plum and raspberry palette with a sunflower highlight (light and dark mode), a light lilac utility bar, pill-chip section labels, inset product image "wells", sunflower stock badges and a recoloured logo.
+- Home 2: the dark navy split hero is now a light colour-block layout with a framed, tilted team photo on a sunflower panel.
+- Accent buttons: text contrast raised from 2.9:1 to 5.0:1 in light mode; dark text on pink in dark mode (7.0:1).
+
 ## 2.2.0 — 2026-09-28
 
 Home menu, requirements review and integration points.

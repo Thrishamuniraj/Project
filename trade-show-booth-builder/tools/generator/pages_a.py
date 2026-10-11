@@ -10,14 +10,10 @@ def frame(inner, cls=''):
     return '<div class="frame %s">%s<i class="frame__c frame__c--tl"></i><i class="frame__c frame__c--tr"></i><i class="frame__c frame__c--bl"></i><i class="frame__c frame__c--br"></i></div>' % (cls, inner)
 
 
-WHY = [('i-ruler', 'Custom design', 'No catalogue stands. Every layout starts from your brand, your audience and your footprint.'),
-       ('i-clipboard', 'End-to-end execution', 'Design, build, graphics, freight, install and strike under one contract and one schedule.'),
-       ('i-users', 'Experienced installation team', 'Named supervisors and crews who have built in more than 60 venues.'),
-       ('i-hammer', 'Quality fabrication', 'Our own 42,000 sq ft workshop, with a full dry-fit before anything ships.'),
+WHY = [('i-clipboard', 'End-to-end execution', 'Design, build, graphics, freight, install and strike under one contract and one schedule.'),
        ('i-target', 'Brand-focused layouts', 'Sightlines, headlines and hero moments planned for how people actually walk a hall.'),
        ('i-clock', 'On-time set-up', 'A critical-path schedule, tracked weekly, with contingency built in.'),
-       ('i-globe', 'Multi-location support', 'Partner crews in North America, Europe and the Middle East, supervised by us.'),
-       ('i-briefcase', 'Professional project management', 'One accountable manager, one budget report, no last-minute surprises.')]
+       ('i-globe', 'Multi-location support', 'Partner crews in North America, Europe and the Middle East, supervised by us.')]
 
 
 def home1():

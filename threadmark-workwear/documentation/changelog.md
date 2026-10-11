@@ -1,6 +1,26 @@
 # Changelog
 
 
+## 2.3.1 — 2026-10-11
+
+Follow-up fixes after the review corrections.
+
+- Form status messages, blog cards, the logo-upload error and the active-filter bar now respect the `hidden` attribute. Before, the contact page showed its success message before any submission and the blog listed all 12 posts at once instead of six per page.
+- In-page links land below the sticky header (`scroll-padding-top`).
+
+## 2.3.0 — 2026-10-09
+
+Website review corrections (Sep slot 3, first correction).
+
+- Header: **About** now sits next to **Home**, and the theme and RTL toggles moved from the top bar into the main header bar on every page (the Legal page gained the theme toggle).
+- Sticky header fixed: `overflow-x: clip` replaces the `hidden` value that disabled `position: sticky`; the main bar stays pinned while the top bar scrolls away. The menu collapses to the hamburger below 1200px so the header never overflows.
+- Home 2: new full-bleed industry hero (distinct from Home 1) with six industry shortcuts; the Featured Collection is now a grid with no horizontal scrolling.
+- Hero and final CTA buttons on both homepages have clear hover and focus states (outline buttons fill white; accent buttons darken with a focus ring).
+- New **Industries** page (`pages/industries.html`) — the header and mobile-menu Industries links point to it; added to `sitemap.xml`.
+- Custom Embroidery: the Placement Guide is now a clean numbered diagram (polo front/back and cap) with a matching legend.
+- About: the leadership section uses real portrait photos.
+- Blog: smaller labels on article cards.
+
 ## 2.2.0 — 2026-09-28
 
 Home menu, requirements review and integration points.

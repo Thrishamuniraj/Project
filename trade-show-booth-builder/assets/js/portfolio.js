@@ -119,7 +119,7 @@
     if (!b || !window.Standform) return;
     const p = PROJECTS.find((x) => x.slug === b.dataset.quickView);
     if (!p) return;
-    const media = '<div class="modal__media"><img src="' + IMG + p.img + '.svg" alt="' + esc(p.title) + ' booth render" width="800" height="600"></div>';
+    const media = '<div class="modal__media"><img src="' + IMG + p.img + '" alt="' + esc(p.imgAlt || p.title) + '" width="800" height="600"></div>';
     const html = '<p><span class="badge badge--accent">' + esc(p.typeLabel) + '</span> <span class="badge">' + esc(p.industryLabel) + '</span></p>'
       + '<dl class="modal__meta"><div><strong>Size:</strong> ' + esc(p.size) + '</div><div><strong>Event:</strong> ' + esc(p.event) + ', ' + esc(p.location) + '</div></dl>'
       + '<p>' + esc(p.desc) + '</p>'
@@ -140,9 +140,9 @@
     const res = $('[data-p-results]');
     if (res) res.innerHTML = p.results.map((r) => '<li class="result is-visible"><strong>' + esc(r[0]) + '</strong><span>' + esc(r[1]) + '</span></li>').join('');
     const hero = $('[data-p-img]');
-    if (hero) { hero.src = IMG + p.img + '.svg'; hero.alt = p.title + ' booth render'; }
+    if (hero) { hero.src = IMG + p.img; hero.alt = p.imgAlt || p.title; }
     const GALT = { 0: 'perspective render', 2: 'detail crop, left side', 3: 'detail crop, right side' };
-    $$('[data-p-gallery]').forEach((im) => { im.src = IMG + p.img + '.svg'; im.alt = p.title + ' ' + (GALT[im.dataset.pGallery] || 'view'); });
+    $$('[data-p-gallery]').forEach((im) => { im.src = IMG + p.img; im.alt = p.title + ' ' + (GALT[im.dataset.pGallery] || 'view'); });
     const plan = $('[data-p-plan]');
     if (plan) { plan.src = IMG + (PLANS[p.type] || 'plan-island') + '.svg'; plan.alt = p.typeLabel + ' floor plan'; }
 
@@ -159,7 +159,7 @@
         const j = JSON.parse(s.textContent);
         if (j['@type'] === 'ImageObject') {
           j.name = p.title; j.description = p.desc; j.caption = p.event + ', ' + p.location;
-          j.contentUrl = j.contentUrl.replace(/project-\d+\.svg/, p.img + '.svg');
+          j.contentUrl = j.contentUrl.replace(/images\/.*$/, 'images/' + p.img);
           s.textContent = JSON.stringify(j);
         }
       } catch (err) { /* leave structured data untouched */ }
@@ -169,7 +169,7 @@
     if (rel) {
       const others = PROJECTS.filter((x) => x.slug !== p.slug);
       others.sort((a, b) => (b.industry === p.industry) - (a.industry === p.industry) || (b.type === p.type) - (a.type === p.type));
-      rel.innerHTML = others.slice(0, 3).map((x) => '<article class="pcard is-visible"><a class="pcard__media" href="portfolio-details.html?project=' + x.slug + '" tabindex="-1" aria-hidden="true"><img src="' + IMG + x.img + '.svg" alt="' + esc(x.title) + ' booth render" width="800" height="600" loading="lazy"><span class="pcard__badges"><span class="badge badge--dark">' + esc(x.typeLabel) + '</span></span></a>'
+      rel.innerHTML = others.slice(0, 3).map((x) => '<article class="pcard is-visible"><a class="pcard__media" href="portfolio-details.html?project=' + x.slug + '" tabindex="-1" aria-hidden="true"><img src="' + IMG + x.img + '" alt="' + esc(x.imgAlt || x.title) + '" width="800" height="600" loading="lazy"><span class="pcard__badges"><span class="badge badge--dark">' + esc(x.typeLabel) + '</span></span></a>'
         + '<div class="pcard__body"><p class="pcard__kicker">' + esc(x.industryLabel) + '</p><h3 class="pcard__title"><a href="portfolio-details.html?project=' + x.slug + '">' + esc(x.title) + '</a></h3><p class="pcard__desc">' + esc(x.desc) + '</p>'
         + '<div class="pcard__foot"><a class="link-arrow" href="portfolio-details.html?project=' + x.slug + '"><span>View Project</span><svg class="icon icon--flip" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg><span class="sr-only"> ' + esc(x.title) + '</span></a></div></div></article>').join('');
     }

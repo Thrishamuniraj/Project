@@ -24,7 +24,7 @@ svc_ld = {'@context': 'https://schema.org', '@type': 'Service', 'name': 'Custom 
           'areaServed': ['United States', 'Europe', 'Middle East'], 'description': SERVICES[0]['overview'],
           'offers': {'@type': 'Offer', 'priceCurrency': 'USD', 'priceSpecification': {'@type': 'UnitPriceSpecification', 'price': '95', 'priceCurrency': 'USD', 'unitText': 'per sq ft', 'referenceQuantity': {'@type': 'QuantitativeValue', 'value': '1', 'unitCode': 'FTK'}}}}
 p1 = PROJECTS[0]
-img_ld = {'@context': 'https://schema.org', '@type': 'ImageObject', 'contentUrl': BASE + '/assets/images/project-01.svg', 'name': p1['title'], 'description': p1['desc'], 'creator': {'@type': 'Organization', 'name': SITE['legal']}, 'caption': p1['event'] + ', ' + p1['location']}
+img_ld = {'@context': 'https://schema.org', '@type': 'ImageObject', 'contentUrl': BASE + '/assets/images/' + photo_src('project-01'), 'name': p1['title'], 'description': p1['desc'], 'creator': {'@type': 'Organization', 'name': SITE['legal']}, 'caption': p1['event'] + ', ' + p1['location']}
 about_ld = {'@context': 'https://schema.org', '@type': 'AboutPage', 'name': 'About Standform', 'url': BASE + '/pages/about.html', 'about': {'@type': 'Organization', 'name': SITE['legal']}}
 faq_ld = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in FAQ]}
 
@@ -86,7 +86,7 @@ def js_obj(o):
 
 proj_js = [dict(slug=p['slug'], title=p['title'], type=p['type'], typeLabel=p['typeLabel'], mode=p['mode'], industry=p['industry'], industryLabel=p['industryLabel'], size=p['size'], event=p['event'], location=p['location'], year=p['year'],
                 desc=p['desc'], challenge=p['challenge'], solution=p['solution'], materials=p['materials'], lighting=p['lighting'], branding=p['branding'], construction=p['construction'], install=p['install'],
-                results=[list(r) for r in p['results']], img=p['img']) for p in PROJECTS]
+                results=[list(r) for r in p['results']], img=photo_src(p['img']), imgAlt=PHOTO.get(p['img'], ('', p['title'] + ' booth render'))[1]) for p in PROJECTS]
 write('assets/js/plugins/projects-data.js', '/* Demo project data for portfolio-details.html and quick view. Generated from the template content; edit freely. */\nwindow.SF_PROJECTS = %s;\nwindow.SF_PLANS = %s;\n' % (js_obj(proj_js), js_obj(B.PLAN_FOR)))
 posts_js = [dict(slug=p['slug'], title=p['title'], cat=p['cat'], catLabel=p['catLabel'], date=p['date'], dateLabel=fmt_date(p['date']), read=p['read'], author=p['author'], excerpt=p['excerpt'], img=photo_src(p['img']), imgAlt=PHOTO.get(p['img'], ('', p['title']))[1], sections=[list(s) for s in p['sections']]) for p in POSTS]
 write('assets/js/plugins/posts-data.js', '/* Demo blog data used by blog-details.html. */\nwindow.SF_POSTS = %s;\n' % js_obj(posts_js))

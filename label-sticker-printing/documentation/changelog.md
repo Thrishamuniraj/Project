@@ -1,6 +1,25 @@
 # Changelog
 
 
+## 2.3.1 — 2026-10-11
+
+Follow-up fixes after the review corrections.
+
+- Contact (and every page): the "Thanks — your request is in!" alert stayed visible before any submission because `.alert { display: flex }` overrode the `hidden` attribute; `.alert[hidden]` now hides it until a valid submit.
+- Sticky header fixed: `body` used `height: 100%` and `overflow-x: hidden`, which confined the sticky header to the first screen; it now uses `overflow-x: clip` and grows with its content. In-page links land below the header (`scroll-padding-top`).
+- Admin dashboard: the top bar no longer overflows 320px screens (the user's name stays as the button's accessible name; gaps tighten below 420px).
+- Home 1: Barcode Labels, UV Coating and Foil Finishing are worded as enquiries ("ask a specialist to confirm availability") until the offers are confirmed — see *Content to confirm before publishing* in `customization.md`.
+- Home 1: Custom Printing is now a numbered specification list beside its introduction and Industries uses captioned photo tiles, so the page no longer repeats the same card grid; Transparent Labels has its own photo (`lbl-clear-dropper.webp`).
+- Primary button hover darkened to `#cf3a26` (white text 4.9:1, was 4.4:1).
+
+## 2.3.0 — 2026-10-09
+
+Website review corrections (Sep slot 3, first correction).
+
+- Home 1 completed to the review outline: new **About Us**, **Printing & Finishing** (digital, matte, gloss, lamination, UV coating, foil), **Custom Printing** (size, shape, material, finish, quantity), **Industries We Serve**, **Gallery**, **FAQ** and **Contact Us** (quote form) sections.
+- Products: added Barcode Labels and Transparent Labels; "Product Stickers" is now "Product Labels & Stickers".
+- Why Choose Us now names affordable pricing; How It Works shows the quote and quality-check steps.
+
 ## 2.2.0 — 2026-09-28
 
 Home menu, requirements review and integration points.

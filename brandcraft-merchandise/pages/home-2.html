@@ -21,17 +21,30 @@
 <link rel="stylesheet" href="../assets/css/rtl.css">
 <style>
   /* Home 2 — editorial layout overrides, distinct from the Home 1 collage hero. */
-  .ed-hero { background: var(--navy-900, #081a2e); color: #fff; padding-block: var(--space-24) var(--space-20); overflow: hidden; position: relative; }
-  .ed-hero h1 { color: #fff; font-size: clamp(2.6rem, 2rem + 3.5vw, 5rem); line-height: 1.02; max-width: 14ch; }
-  .ed-hero p { color: rgba(255,255,255,0.72); }
+  .ed-hero { background: var(--lilac-50); color: var(--color-text); padding-block: var(--space-20) var(--space-16); overflow: hidden; position: relative; isolation: isolate; }
+  /* sunflower colour block behind the photo: BrandCraft motif (distinct from ThreadMark's navy heroes) */
+  @media (min-width: 1024px) { .ed-hero::before { content: ''; position: absolute; z-index: -1; inset-block: 0; inset-inline-end: 0; width: 34%; background: var(--sun-400); border-end-start-radius: 220px; } }
+  .ed-hero h1 { color: var(--navy-900); font-size: clamp(2.6rem, 2rem + 3.5vw, 5rem); line-height: 1.02; max-width: 14ch; }
+  .ed-hero p { color: var(--color-text-muted); }
   .ed-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-10); align-items: end; }
   @media (min-width: 1024px) { .ed-hero-grid { grid-template-columns: 1.3fr 0.7fr; } }
   .ed-hero-panel { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-lg); padding: var(--space-8); }
   .ed-hero-panel svg { width: 100%; color: rgba(255,255,255,0.85); }
   /* Photo panel: team kit portrait with the shipment stat pinned to the bottom */
-  .ed-hero-panel.has-photo { position: relative; margin: 0; padding: 0; overflow: hidden; aspect-ratio: 4 / 5; max-height: 560px; }
+  .ed-hero-panel.has-photo { position: relative; margin: 0; padding: 0; overflow: hidden; aspect-ratio: 4 / 5; max-height: 560px; border: 8px solid #fff; box-shadow: var(--shadow-lg); rotate: -2deg; }
   .ed-hero-panel.has-photo img { width: 100%; height: 100%; object-fit: cover; }
-  .ed-hero-panel.has-photo figcaption { position: absolute; inset-inline: var(--space-4); inset-block-end: var(--space-4); padding: var(--space-4) var(--space-5); border-radius: var(--radius-md); background: rgba(10, 26, 44, 0.86); color: #fff; font-family: var(--font-heading); font-weight: 700; }
+  .ed-hero-panel.has-photo figcaption { position: absolute; inset-inline: var(--space-4); inset-block-end: var(--space-4); padding: var(--space-4) var(--space-5); border-radius: var(--radius-md); background: rgba(29, 16, 51, 0.88); color: #fff; font-family: var(--font-heading); font-weight: 700; }
+  @media (max-width: 1023px) { .ed-hero-panel.has-photo { rotate: none; } }
+  :root[data-theme="dark"] .ed-hero { background: var(--color-bg-alt); }
+  :root[data-theme="dark"] .ed-hero::before { background: rgba(255, 200, 61, 0.16); }
+  :root[data-theme="dark"] .ed-hero h1 { color: var(--color-primary-strong); }
+  :root[data-theme="dark"] .ed-hero-panel.has-photo { border-color: var(--color-surface-raised); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .ed-hero { background: var(--color-bg-alt); }
+    :root:not([data-theme="light"]) .ed-hero::before { background: rgba(255, 200, 61, 0.16); }
+    :root:not([data-theme="light"]) .ed-hero h1 { color: var(--color-primary-strong); }
+    :root:not([data-theme="light"]) .ed-hero-panel.has-photo { border-color: var(--color-surface-raised); }
+  }
   @media (max-width: 1023px) { .ed-hero-panel.has-photo { aspect-ratio: 16 / 10; } }
   /* Campaign cards: photo on top, story below */
   .campaign-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
@@ -166,10 +179,10 @@
   <section class="ed-hero">
     <div class="container ed-hero-grid">
       <div>
-        <span class="eyebrow" style="color:var(--color-accent);">Editorial Showcase</span>
+        <span class="eyebrow">Editorial Showcase</span>
         <h1>Merchandise Designed Around Your Brand.</h1>
         <p class="lead" style="max-width:46ch;margin-block:var(--space-6) var(--space-8);">Not a catalogue scroll — a look at how real campaigns, gifting programmes and team kits come together, product by product.</p>
-        <div class="hero-cta"><a class="btn btn-accent btn-lg" href="contact.html">Request a Quote</a><a class="btn btn-outline-inverse btn-lg" href="index.html">View Classic Home</a></div>
+        <div class="hero-cta"><a class="btn btn-accent btn-lg" href="contact.html">Request a Quote</a><a class="btn btn-outline btn-lg" href="index.html">View Classic Home</a></div>
       </div>
       <figure class="ed-hero-panel has-photo" data-reveal><img src="../assets/images/photos/bc-h2-team-tees.webp" alt="Two team members in matching white t-shirts printed with the Fieldstone Analytics logo" width="1000" height="1250" fetchpriority="high" decoding="async"><figcaption>2.4M+ units branded and shipped last year alone.</figcaption></figure>
     </div>

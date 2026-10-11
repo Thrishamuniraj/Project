@@ -132,7 +132,7 @@
     return s + '</defs></svg>';
   }
 
-  var MARK = '<svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect width="40" height="40" rx="10" fill="#12406b"/><path d="M9.5 10.5h21a3 3 0 0 1 3 3v11.5a3 3 0 0 1-3 3H19l-5.5 4.5v-4.5h-4a3 3 0 0 1-3-3V13.5a3 3 0 0 1 3-3z" fill="#fff"/><path d="M13.5 22.5 19 16l5.5 6.5" fill="none" stroke="#0b7a83" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13.5" cy="22.5" r="2.5" fill="#12406b"/><circle cx="19" cy="16" r="2.5" fill="#12406b"/><circle cx="26.5" cy="22.5" r="3" fill="#f0a12b"/></svg>';
+  var MARK = '<svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect width="40" height="40" rx="10" fill="#12406b"/><path d="M11 8.5h18a4.5 4.5 0 0 1 4.5 4.5v11a4.5 4.5 0 0 1-4.5 4.5h-8.5l-6.2 4.8a.6.6 0 0 1-1-.5v-4.3H11A4.5 4.5 0 0 1 6.5 24V13A4.5 4.5 0 0 1 11 8.5z" fill="#fff"/><path d="M13.2 24 20 13.5 26.8 24" fill="none" stroke="#12406b" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.2 20.2h7.6" stroke="#0b7a83" stroke-width="2.6" stroke-linecap="round"/><circle cx="29" cy="12.8" r="2.4" fill="#f0a12b"/></svg>';
 
   function brand() {
     return '<a class="brand" href="index.html" aria-label="' + SITE.name + ' ' + SITE.tagline + ' — home">' + MARK +

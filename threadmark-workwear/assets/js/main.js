@@ -130,6 +130,11 @@
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+    // Sticky offset: only the main bar stays pinned, so the header sticks at minus the top bar's height
+    const topbar = header.querySelector('.header-topbar');
+    const setTopbarHeight = () => root.style.setProperty('--topbar-h', (topbar ? topbar.offsetHeight : 0) + 'px');
+    setTopbarHeight();
+    window.addEventListener('resize', setTopbarHeight, { passive: true });
   }
 
   /* ------------------------------------------------------------------

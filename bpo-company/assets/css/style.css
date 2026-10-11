@@ -85,6 +85,7 @@ body {
   margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
   font-family: var(--font-body); font-size: var(--fs-base); line-height: 1.65;
   -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden;
+  overflow-x: clip; /* clip, not hidden, so the sticky header keeps working (older browsers fall back to hidden) */
 }
 img, svg, video { max-width: 100%; height: auto; display: block; }
 img { font-style: italic; }
@@ -360,6 +361,8 @@ address { font-style: normal; }
 
 /* 5. SITE CHROME — utility bar, header, drawer, footer ------------------- */
 [data-component="header"] { min-height: var(--header-h); }
+/* once mounted, the wrapper steps out of layout so the sticky header is bounded by <body>, not by this header-tall box */
+[data-component="header"]:not(:empty) { display: contents; }
 .utility-bar { display: none; background: #071e37; color: #cfdeef; font-size: var(--fs-xs); }
 @media (min-width: 900px) { .utility-bar { display: block; } }
 .utility-bar__inner { display: flex; justify-content: space-between; align-items: center; gap: var(--space-6); }
@@ -475,7 +478,20 @@ body.has-drawer { overflow: hidden; }
 .page-hero { position: relative; overflow: hidden; background: radial-gradient(circle at 88% 20%, rgba(92, 196, 201, .2), transparent 42%), radial-gradient(circle at 70% 110%, rgba(240, 161, 43, .1), transparent 40%), linear-gradient(135deg, var(--hero-from), var(--hero-to)); color: var(--on-dark); padding-block: clamp(2.5rem, 1.5rem + 4vw, 5rem); }
 .page-hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255, 255, 255, .09) 1.2px, transparent 1.6px); background-size: 24px 24px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 70%); mask-image: linear-gradient(90deg, transparent, #000 70%); pointer-events: none; }
 .page-hero__inner { position: relative; display: grid; gap: var(--space-10); align-items: center; }
-.page-hero__copy { max-width: 780px; }
+.page-hero__copy { max-width: 920px; }
+/* One hero height for every inner page: content is centred inside a shared minimum height per breakpoint */
+.page-hero { display: flex; align-items: center; min-height: 510px; }
+.page-hero > .container { width: 100%; }
+@media (min-width: 640px) { .page-hero { min-height: 510px; } }
+@media (min-width: 1024px) { .page-hero { min-height: 560px; } }
+/* Phones: heroes with extra content (Services jump links, Case Studies demo note) ran to 557-666px.
+   Slightly tighter padding, and the jump links as a two-column grid instead of one chip per row.
+   Heroes at the 510px minimum are vertically centred, so they look unchanged. */
+@media (max-width: 639px) {
+  .page-hero { padding-block: 2rem; }
+  .page-hero .jump-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-hero .jump-nav .chip { width: 100%; justify-content: center; text-align: center; padding-inline: .75rem; line-height: 1.25; }
+}
 .page-hero h1 { font-size: clamp(2rem, 1.35rem + 3vw, 3.5rem); margin-bottom: var(--space-4); }
 .page-hero .lead { color: var(--on-dark-muted); max-width: 64ch; margin-bottom: var(--space-4); }
 .page-hero .breadcrumb { margin-bottom: var(--space-6); }
@@ -580,6 +596,7 @@ body.has-drawer { overflow: hidden; }
 .svc-row__lists { margin-block: var(--space-6); }
 .svc-mini__benefit { display: flex; gap: .5rem; align-items: flex-start; font-size: var(--fs-sm); font-weight: 500; color: var(--secondary-text) !important; }
 .svc-mini__benefit .icon { margin-top: .2em; }
+.svc-mini .card__media img { aspect-ratio: 16 / 10; }
 .stat-list { list-style: none; display: grid; gap: var(--space-4); }
 .stat-list li { display: grid; padding: var(--space-4) var(--space-6); border-inline-start: 3px solid var(--accent); background: var(--surface); border-radius: 0 var(--radius) var(--radius) 0; }
 .stat-list strong { font-family: var(--font-display); font-size: 1.75rem; color: var(--primary-text); line-height: 1.2; }

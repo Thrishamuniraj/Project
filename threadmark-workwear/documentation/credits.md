@@ -95,6 +95,10 @@ Logo mockups (2026-09-28): the template's fictional client logos (Bright River H
 | `tm-svc-embroidery.webp` | person using sewing machine | [Burst](https://burst.shopify.com/photos/person-using-sewing-machine) | Burst contributor | Burst free licence |
 | `tm-svc-safety.webp` | construction site plans | [Burst](https://burst.shopify.com/photos/construction-site-plans) | Burst contributor | Burst free licence |
 | `tm-svc-sizing.webp` | sewing tools flatlay knolling | [Burst](https://burst.shopify.com/photos/sewing-tools-flatlay-knolling) | Burst contributor | Burst free licence |
+| `tm-team-david.webp` | professional man smiling | [Burst](https://burst.shopify.com/photos/professional-man-smiling) | Burst contributor | Burst free licence |
+| `tm-team-marcus.webp` | friendly smiling man | [Burst](https://burst.shopify.com/photos/friendly-smiling-man) | Burst contributor | Burst free licence |
+| `tm-team-priya.webp` | professional smiling woman | [Burst](https://burst.shopify.com/photos/professional-smiling-woman) | Burst contributor | Burst free licence |
+| `tm-team-sofia.webp` | a woman in a plain green shirt against a blue backdrop | [Burst](https://burst.shopify.com/photos/a-woman-in-a-plain-green-shirt-against-a-blue-backdrop) | Burst contributor | Burst free licence |
 
 ## Code
 

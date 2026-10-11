@@ -39,7 +39,8 @@ window.SF_PROJECTS = [
     "On-site installation"
    ]
   ],
-  "img": "project-01"
+  "img": "project-01.svg",
+  "imgAlt": "NovaTech Exhibition Stand booth render"
  },
  {
   "slug": "kite-modular-rental-stand",
@@ -80,7 +81,8 @@ window.SF_PROJECTS = [
     "Lower cost than a comparable custom build"
    ]
   ],
-  "img": "project-02"
+  "img": "project-02.svg",
+  "imgAlt": "Kite Launch Stand booth render"
  },
  {
   "slug": "meridian-health-pavilion",
@@ -121,7 +123,8 @@ window.SF_PROJECTS = [
     "Compliance findings at hall sign-off"
    ]
   ],
-  "img": "project-03"
+  "img": "project-03.svg",
+  "imgAlt": "Meridian Health Pavilion booth render"
  },
  {
   "slug": "curalis-rental-inline",
@@ -162,7 +165,8 @@ window.SF_PROJECTS = [
     "Kit, reused twice"
    ]
   ],
-  "img": "project-04"
+  "img": "project-04.svg",
+  "imgAlt": "Curalis Diagnostics Stand booth render"
  },
  {
   "slug": "vantage-motors-double-decker",
@@ -203,7 +207,8 @@ window.SF_PROJECTS = [
     "On-site build"
    ]
   ],
-  "img": "project-05"
+  "img": "project-05.svg",
+  "imgAlt": "Vantage Motors Showcase booth render"
  },
  {
   "slug": "torque-ev-island",
@@ -244,7 +249,8 @@ window.SF_PROJECTS = [
     "Halo ring seen across the hall"
    ]
   ],
-  "img": "project-06"
+  "img": "project-06.svg",
+  "imgAlt": "Torque EV Charging Island booth render"
  },
  {
   "slug": "ironbridge-industrial-peninsula",
@@ -285,7 +291,8 @@ window.SF_PROJECTS = [
     "Safety findings"
    ]
   ],
-  "img": "project-07"
+  "img": "project-07.svg",
+  "imgAlt": "Ironbridge Automation Peninsula booth render"
  },
  {
   "slug": "solara-energy-island",
@@ -326,7 +333,8 @@ window.SF_PROJECTS = [
     "Live energy display"
    ]
   ],
-  "img": "project-08"
+  "img": "project-08.svg",
+  "imgAlt": "Solara Solar Island booth render"
  },
  {
   "slug": "lumen-retail-inline",
@@ -367,7 +375,8 @@ window.SF_PROJECTS = [
     "Footprint"
    ]
   ],
-  "img": "project-09"
+  "img": "project-09.svg",
+  "imgAlt": "Lumen Lighting Boutique booth render"
  },
  {
   "slug": "nordic-design-collective-pavilion",
@@ -408,7 +417,8 @@ window.SF_PROJECTS = [
     "Frame system returned to stock"
    ]
   ],
-  "img": "project-10"
+  "img": "project-10.svg",
+  "imgAlt": "Nordic Design Collective booth render"
  },
  {
   "slug": "halcyon-capital-double-decker",
@@ -449,7 +459,8 @@ window.SF_PROJECTS = [
     "Levels of hospitality"
    ]
   ],
-  "img": "project-11"
+  "img": "project-11.svg",
+  "imgAlt": "Halcyon Capital Lounge booth render"
  },
  {
   "slug": "harvest-and-hearth-peninsula",
@@ -490,7 +501,8 @@ window.SF_PROJECTS = [
     "Hygiene findings"
    ]
   ],
-  "img": "project-12"
+  "img": "project-12.svg",
+  "imgAlt": "Harvest & Hearth Food Booth booth render"
  }
 ];
 window.SF_PLANS = {

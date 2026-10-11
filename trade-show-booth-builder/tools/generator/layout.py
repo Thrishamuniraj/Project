@@ -83,10 +83,9 @@ def sprite():
     for k, v in SOCIAL.items():
         s += '<symbol id="i-%s" viewBox="0 0 24 24" fill="currentColor">%s</symbol>' % (k, v)
     s += ('<symbol id="i-mark" viewBox="0 0 32 32">'
-          '<path d="M16 27 4 21l12-6 12 6z" fill="currentColor" opacity=".28"/>'
-          '<path d="M4 21V9l12-6v12z" fill="currentColor"/>'
-          '<path d="M16 15V3l12 6v12z" fill="currentColor" opacity=".62"/>'
-          '<path d="M4 9l12-6 12 6-2.4 1.2L16 5.4 6.4 10.2z" fill="var(--color-accent)"/>'
+          '<path d="M16 29.5 3.5 23.25 16 17l12.5 6.25z" fill="var(--color-accent)"/>'
+          '<path d="M3.5 20.5V8.5L16 2.25v12z" fill="currentColor"/>'
+          '<path d="M16 14.25v-12L28.5 8.5v12z" fill="currentColor" opacity=".55"/>'
           '</symbol>')
     return s + '</defs></svg>'
 
