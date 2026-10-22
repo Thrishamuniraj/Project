@@ -1,6 +1,15 @@
 # Changelog
 
 
+## 2.4.0 — 2026-10-22
+
+Website review corrections (Sep slot 3, second correction).
+
+- Home 1: Featured Portfolio shows eight projects, so every row is full at one, two and three columns.
+- Home 2: hero content is centred (the project sheet becomes a centred strip on desktop); Booth Types is a grid instead of a sideways scroller.
+- Contact: the page heading is centred.
+- Mobile menu: the theme and direction controls were removed (both are in the header at every width); "Request a Project Quote" is hidden from 768px, where the header shows it.
+
 ## 2.3.1 — 2026-10-11
 
 Follow-up fixes after the review corrections.

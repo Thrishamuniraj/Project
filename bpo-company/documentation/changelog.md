@@ -1,6 +1,14 @@
 # Changelog
 
 
+## 2.4.0 — 2026-10-22
+
+Website review corrections (Sep slot 3, second correction).
+
+- Home 1 How We Work: the time labels line up at the bottom of every step card (also on Careers).
+- Careers: the Employee Stories heading is centred over its cards; each job's "View details" is an outlined button instead of a hover-only link.
+- Mobile menu: the theme and direction controls were removed (both are in the header); "Partner With Us" is hidden from 640px, where the header shows it.
+
 ## 2.3.1 — 2026-10-11
 
 Follow-up fixes after the review corrections.

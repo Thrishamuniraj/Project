@@ -357,6 +357,10 @@ strong { font-weight: 700; color: var(--color-text); }
 .service-card .icon-tile { margin-bottom: var(--space-2); }
 .service-card h3 { font-size: var(--fs-lg); }
 .service-card .btn { margin-top: auto; align-self: flex-start; }
+/* Services index cards: "Learn More" links share one baseline at the bottom of each card and line up with the text */
+.svc-index .card-body { display: flex; flex-direction: column; align-items: flex-start; }
+.svc-index .card-body > p { margin-bottom: var(--space-4); }
+.svc-index .card-body > .btn { margin-top: auto; padding-inline: 0; }
 
 .icon-tile {
   width: 56px; height: 56px;
@@ -381,7 +385,10 @@ strong { font-weight: 700; color: var(--color-text); }
 .product-card .price { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-lg); color: var(--color-text); }
 .product-card .price span { font-family: var(--font-body); font-weight: 400; font-size: var(--fs-xs); color: var(--color-text-muted); }
 .product-card .actions { display: flex; gap: var(--space-2); margin-top: var(--space-4); }
-.product-card .actions .btn { flex: 1; }
+.product-card .actions .btn { flex: 1 1 7.5rem; } /* wraps to two rows when the card is too narrow (1024px grid) */
+/* Price + actions sit at the bottom of every card so the CTA rows line up across a grid row */
+.product-card .price-row { margin-top: auto; }
+.product-card .actions { flex-wrap: wrap; }
 
 /* Testimonial card */
 .testimonial-card { padding: var(--space-8); display: flex; flex-direction: column; gap: var(--space-5); }
@@ -393,7 +400,9 @@ strong { font-weight: 700; color: var(--color-text); }
 
 /* Blog card */
 .blog-card { display: flex; flex-direction: column; }
-.blog-card .card-body { display: flex; flex-direction: column; gap: var(--space-3); }
+.blog-card .card-body { display: flex; flex-direction: column; gap: var(--space-3); flex: 1; }
+/* "Read More" links share one baseline at the bottom of each card and line up with the text above */
+.blog-card .card-body > .btn { margin-top: auto; align-self: flex-start; padding-inline: 0; }
 .blog-card .post-meta { display: flex; gap: var(--space-3); font-size: var(--fs-xs); color: var(--color-text-muted); flex-wrap: wrap; }
 .blog-card h3 { font-size: var(--fs-md); }
 .blog-card .excerpt { font-size: var(--fs-sm); }
@@ -560,6 +569,8 @@ fieldset.field { border: none; padding: 0; }
 }
 @media (max-width: 1024px) and (min-width: 480px) {
   .header-actions > a.btn { display: inline-flex; }
+  /* the header shows "Get a Quote" at these widths, so the drawer does not repeat it */
+  .mobile-nav-cta { display: none; }
 }
 
 /* ==========================================================================
@@ -651,6 +662,7 @@ fieldset.field { border: none; padding: 0; }
 .accordion-trigger {
   width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
   padding: var(--space-5) 0; text-align: start; background: transparent; font-weight: 700; font-size: var(--fs-base); min-height: 44px;
+  border: 0; /* no browser button border: questions sit on the item's divider line like the answers below them */
 }
 .accordion-trigger .plus { width: 22px; height: 22px; flex-shrink: 0; position: relative; }
 .accordion-trigger .plus::before, .accordion-trigger .plus::after { content: ""; position: absolute; background: var(--color-primary); border-radius: 2px; transition: transform var(--duration-fast) var(--ease-standard); }
@@ -1130,6 +1142,9 @@ fieldset.field { border: none; padding: 0; }
 /* aria-current active nav state */
 .nav-link[aria-current="page"] { color: var(--color-primary); }
 .mobile-nav .nav-link[aria-current="page"] { color: var(--color-primary); }
+/* `.main-nav a.nav-link` sets the colour with higher specificity, so the desktop current item needs its own rule:
+   an accent underline keeps the label at full text contrast in both themes */
+.main-nav a.nav-link[aria-current="page"] { font-weight: 700; border-radius: 0; box-shadow: inset 0 -2px 0 var(--color-primary); }
 
 /* Dashboard KPI icon color variants */
 .kpi-icon.primary { background: var(--color-primary-light); color: var(--color-primary-dark); }
@@ -1233,9 +1248,10 @@ fieldset.field { border: none; padding: 0; }
 .cta-ink { position: relative; isolation: isolate; overflow: hidden; padding-block: var(--space-20); background: var(--color-secondary); color: #fff; }
 .cta-ink__bg { position: absolute; inset: 0; z-index: -1; }
 .cta-ink__bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.45; }
-.cta-ink::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(20, 21, 26, 0.95) 0%, rgba(20, 21, 26, 0.7) 55%, rgba(20, 21, 26, 0.2) 100%); }
-[dir="rtl"] .cta-ink::after { background: linear-gradient(270deg, rgba(20, 21, 26, 0.95) 0%, rgba(20, 21, 26, 0.7) 55%, rgba(20, 21, 26, 0.2) 100%); }
-.cta-ink .cta-ink__content { max-width: 620px; }
+/* Centred final CTA (review): an even overlay keeps the centred copy legible across the photo */
+.cta-ink::after { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at center, rgba(20, 21, 26, 0.9) 0%, rgba(20, 21, 26, 0.78) 60%, rgba(20, 21, 26, 0.6) 100%); }
+.cta-ink .cta-ink__content { max-width: 680px; margin-inline: auto; text-align: center; }
+.cta-ink .hero-actions, .cta-ink .hero-stats { justify-content: center; }
 .cta-ink h2 { color: #fff; font-size: var(--fs-4xl); }
 .cta-ink p { color: rgba(255, 255, 255, 0.78); margin-block: var(--space-4) var(--space-8); }
 @media (max-width: 640px) { .cta-ink { padding-block: var(--space-16); } .cta-ink h2 { font-size: var(--fs-3xl); } }
@@ -1292,12 +1308,12 @@ fieldset.field { border: none; padding: 0; }
 .svc-steps li { display: flex; gap: var(--space-5); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-surface); }
 .svc-step-num { flex-shrink: 0; font-family: var(--font-display); font-size: var(--fs-2xl); font-weight: 700; color: var(--color-primary); line-height: 1; }
 .svc-steps h3 { font-size: var(--fs-lg); margin-bottom: var(--space-2); }
-.svc-faq { max-width: 860px; }
+.svc-faq { max-width: 860px; margin-inline: auto; } /* centred like the Home FAQ (review: consistent section alignment) */
 @media (max-width: 1024px) { .included-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .svc-process { grid-template-columns: 1fr; gap: var(--space-8); } .svc-process__intro { position: static; } }
 @media (max-width: 640px) { .included-grid { grid-template-columns: 1fr; } .svc-steps li { padding: var(--space-5); } }
 
 /* Home 2 editorial hero: headline and intro side by side so the product strip shows above the fold */
-.hero-editorial { padding-block: var(--space-12) 0; }
+.hero-editorial { padding-block: var(--space-12); } /* bottom padding so the staggered image strip does not sit flush on the section edge */
 .hero-editorial .hero-content--editorial { max-width: none; display: grid; grid-template-columns: 7fr 5fr; gap: var(--space-10); align-items: end; }
 .hero-editorial .hero-content--editorial h1 { margin-bottom: 0; }
 .hero-editorial__aside .lead { margin-bottom: var(--space-6); }
@@ -1312,7 +1328,6 @@ fieldset.field { border: none; padding: 0; }
 .dir-toggle:hover { border-color: var(--color-primary); color: var(--color-primary); }
 .dir-toggle[aria-pressed="true"] { background: var(--color-secondary); border-color: var(--color-secondary); color: #fff; }
 .dir-toggle:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
-.mobile-nav-dir { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); margin-top: var(--space-6); font-size: var(--fs-sm); font-weight: 600; color: var(--color-text-muted); }
 
 /* Contact: "book a call" block (calendar integration point) */
 .booking-hook { display: grid; gap: var(--space-3); justify-items: start; margin-top: var(--space-6); padding: var(--space-5); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
@@ -1389,3 +1404,14 @@ fieldset.field { border: none; padding: 0; }
 
 /* Sticky header (36px top bar + main bar): keep in-page anchor targets below it */
 html { scroll-padding-top: calc(var(--header-height) + 53px); }
+
+/* Waterproof Vinyl Labels gallery: sticky only while it sits beside the options (stacked on phones it stayed pinned and the
+   size/quantity tiles scrolled over it); thumbnails stay in a row of four instead of the global one-column .grid-4 collapse */
+@media (min-width: 769px) { .pd-gallery { position: sticky; top: calc(var(--header-height) + 1.5rem); } }
+.pd-gallery .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 480px) { .pd-gallery { padding: var(--space-4) !important; } }
+
+/* Option tiles in one row share the same height (a wrapping label made one tile taller) */
+.option-tile { display: flex; }
+.option-tile .tile-face { flex: 1; }
+

@@ -1,6 +1,18 @@
 # Changelog
 
 
+## 2.4.0 — 2026-10-22
+
+Website review corrections (Sep slot 3, second correction).
+
+- Header: the current page is highlighted (accent underline), including pages reached from the Home and Services dropdowns.
+- Primary buttons are the same red on every page (five dark buttons switched); Home 2's final CTA is centred and its hero image strip has bottom padding.
+- Standalone section headings are centred consistently (Home 1 and 2, Services, Service Details, About, Pricing, Bulk Pricing); FAQ questions no longer show browser button borders.
+- Products: a 12th product (Waterproof Sauce Bottle Labels) completes the grid; card buttons line up and wrap instead of being cut off at 1024px.
+- Services and Blog: "Learn More" / "Read More" links line up on one baseline.
+- Waterproof Vinyl Labels: the gallery is no longer sticky on phones (option tiles slid over it at 360px); option tiles share one height.
+- Mobile menu: the text-direction control and Log In button were removed (both are in the header), and "Get a Quote" is hidden wherever the header shows it.
+
 ## 2.3.1 — 2026-10-11
 
 Follow-up fixes after the review corrections.

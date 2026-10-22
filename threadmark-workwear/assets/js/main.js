@@ -158,7 +158,20 @@
         if (e.key === 'Escape') { menu.classList.add('is-dismissed'); var l = menu.querySelector('.nav-menu__link'); if (l) { l.focus(); } }
       });
       menu.addEventListener('mouseleave', function () { menu.classList.remove('is-dismissed'); });
-      menu.addEventListener('focusout', function (e) { if (!menu.contains(e.relatedTarget)) { menu.classList.remove('is-dismissed'); } });
+      menu.addEventListener('focusout', function (e) { if (!menu.contains(e.relatedTarget)) { menu.classList.remove('is-dismissed'); menu.classList.remove('is-open'); } });
+      // Touch screens can't hover: the first tap on "Home" opens the dropdown instead of navigating; a second tap follows the link
+      var link = menu.querySelector('.nav-menu__link');
+      if (link) {
+        link.addEventListener('click', function (e) {
+          if (!window.matchMedia('(hover: none)').matches || menu.classList.contains('is-open')) { return; }
+          e.preventDefault();
+          menu.classList.remove('is-dismissed');
+          menu.classList.add('is-open');
+        });
+      }
+    });
+    document.addEventListener('click', function (e) {
+      document.querySelectorAll('.nav-menu.is-open').forEach(function (menu) { if (!menu.contains(e.target)) { menu.classList.remove('is-open'); } });
     });
     document.querySelectorAll('.mobile-nav-group__toggle').forEach(function (btn) {
       var list = document.getElementById(btn.getAttribute('aria-controls'));

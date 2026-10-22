@@ -466,6 +466,13 @@
       const href = link.getAttribute("href").split("/").pop();
       if (href === path) link.setAttribute("aria-current", "page");
     });
+    // Pages reached from a dropdown (Home 2, Upload Your Design, Bulk Pricing…) also highlight their parent item
+    document.querySelectorAll(".nav-dropdown a[href], .sub-links a[href]").forEach((link) => {
+      if (link.getAttribute("href").split("/").pop() !== path) return;
+      link.setAttribute("aria-current", "page");
+      const parent = link.closest(".nav-item") && link.closest(".nav-item").querySelector(".nav-link");
+      if (parent) parent.setAttribute("aria-current", "page");
+    });
   }
 
   /* ------------------------------------------------------------------

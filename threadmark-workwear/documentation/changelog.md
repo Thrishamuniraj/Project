@@ -1,6 +1,17 @@
 # Changelog
 
 
+## 2.4.0 — 2026-10-22
+
+Website review corrections (Sep slot 3, second correction).
+
+- Feature cards use card-sized titles that line up across each row (Home 1 "Built for businesses", Bulk Orders, Services). Home 1 How It Works gains an eighth step ("Reorder anytime"); Custom Embroidery steps gain "Delivery".
+- Home 2: the Featured Collections heading is centred.
+- Blog, Blog Details and Coming Soon: the newsletter email field is visible in light mode.
+- Industries: stacked rows use shorter photos on phones and tablets.
+- Mobile menu: the direction control, "View Products" and the duplicate "Request a Quote" (from 640px, where the header shows it) were removed.
+- Home dropdown: on touch screens the first tap opens the menu and a second tap follows the link.
+
 ## 2.3.1 — 2026-10-11
 
 Follow-up fixes after the review corrections.

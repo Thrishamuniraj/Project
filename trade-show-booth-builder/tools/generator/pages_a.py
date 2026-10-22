@@ -17,7 +17,7 @@ WHY = [('i-clipboard', 'End-to-end execution', 'Design, build, graphics, freight
 
 
 def home1():
-    feat = [PN[i] for i in (1, 5, 3, 7, 2, 10)]
+    feat = [PN[i] for i in (1, 5, 3, 7, 2, 10, 11, 4)]  # eight: fills every row of the grid at 1, 2 and 3 columns
     chips = [('all', 'All'), ('custom-booth', 'Custom'), ('rental', 'Rental'), ('island-booth', 'Island'), ('double-decker', 'Double-Decker'), ('pavilion', 'Pavilions')]
     o = []
     o.append('''<section class="hero on-dark blueprint" aria-labelledby="hero-title"><div class="container hero__grid"><div class="hero__copy">
@@ -32,7 +32,7 @@ def home1():
                 img('hero-booth', 'Isometric render of a custom island exhibition stand with a hanging sign, LED wall and product tower', 1200, 900, eager=True)))
     # portfolio
     o.append('<section class="section" id="portfolio" aria-labelledby="pf-title"><div class="container" data-portfolio>')
-    o.append(section_head('Featured portfolio', 'Booths people remember.', 'Six recent builds from trade shows across North America and Europe.', btn('Full Portfolio', 'portfolio.html', 'btn--dark'), '01').replace('<h2 class="section-title">', '<h2 class="section-title" id="pf-title">'))
+    o.append(section_head('Featured portfolio', 'Booths people remember.', 'Eight recent builds from trade shows across North America and Europe.', btn('Full Portfolio', 'portfolio.html', 'btn--dark'), '01').replace('<h2 class="section-title">', '<h2 class="section-title" id="pf-title">'))
     o.append('<div class="chips" role="group" aria-label="Filter featured projects">%s</div>' % ''.join('<button class="chip" type="button" data-filter="%s" aria-pressed="%s">%s</button>' % (v, 'true' if v == 'all' else 'false', l) for v, l in chips))
     o.append('<p class="sr-only" role="status" aria-live="polite" data-result-count></p><div class="pgrid pgrid--feature" data-grid>')
     for i, p in enumerate(feat):
@@ -95,8 +95,8 @@ def home2():
              % (section_head('Industries we serve', 'Built for how your industry shows up.', 'Each sector has its own rules, audiences and hall culture. We know them.', None, '02').replace('<h2 class="section-title">', '<h2 class="section-title" id="ind-title">'),
                 ''.join('<li class="reveal"><a class="ind-row" href="portfolio.html?industry=%s"><span class="ind-row__n">%02d</span><span class="ind-row__name">%s</span><span class="ind-row__count">%d project%s</span>%s</a></li>' % (v, i + 1, l, cnt.get(v, 0), '' if cnt.get(v, 0) == 1 else 's', ic('arrow-up-right')) for i, (v, l) in enumerate(INDUSTRIES))))
     # booth types strip
-    o.append('<section class="section" id="booth-types" aria-labelledby="bty-title"><div class="container">%s</div><div class="hstrip" tabindex="0" role="region" aria-label="Booth types, scroll horizontally"><ul class="hstrip__track">%s</ul></div></section>'
-             % (section_head('Booth types', 'Eight footprints. Endless compositions.', 'Scroll through the configurations we build most often.', btn('Compare in Detail', 'booth-types.html', 'btn--dark'), '03').replace('<h2 class="section-title">', '<h2 class="section-title" id="bty-title">'),
+    o.append('<section class="section" id="booth-types" aria-labelledby="bty-title"><div class="container">%s<ul class="plan-grid plan-grid--4" role="list">%s</ul></div></section>'
+             % (section_head('Booth types', 'Eight footprints. Endless compositions.', 'The configurations we build most often.', btn('Compare in Detail', 'booth-types.html', 'btn--dark'), '03').replace('<h2 class="section-title">', '<h2 class="section-title" id="bty-title">'),
                 ''.join('<li>%s</li>' % plan_card(b) for b in BOOTH_TYPES)))
     # capabilities
     caps = [('i-cube', '3D design & rendering', 'Photo-real models, walkthroughs and technical drawings in-house.', '2 render angles, standard'),

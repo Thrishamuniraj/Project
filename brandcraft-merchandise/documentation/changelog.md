@@ -1,6 +1,17 @@
 # Changelog
 
 
+## 2.4.0 — 2026-10-22
+
+Website review corrections (Sep slot 3, second correction).
+
+- Header: the "Categories" link was removed (the category content on Products is unchanged); the mobile menu no longer repeats the direction control.
+- Home 1 "Shop by Category": titles, text, tags and buttons line up across the three cards.
+- Home 2 Campaign Showcase and Bulk Orders "Built For" are grids instead of sideways scrollers.
+- Products: a 21st product (Kraft Paper Gift Bag); the filter panel is only sticky beside the grid (it covered products on phones); card buttons wrap at 1024px; the bottom quick-action bar fits 360px screens.
+- Custom Branding: the How It Works detail panel no longer stretches into a large empty box; card grids stack on narrow phones (also Corporate Gifting and Pricing).
+- Blog: the newsletter form fits 360px screens.
+
 ## 2.3.1 — 2026-10-11
 
 Follow-up fixes after the review corrections.

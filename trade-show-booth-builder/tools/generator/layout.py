@@ -266,9 +266,10 @@ def header(key, overlay=False):
     for i, (label, href, keys, sub) in enumerate(NAV):
         o.append('<li><a href="%s"%s><span class="drawer__num">%02d</span><span>%s</span></a></li>' % (href, ' aria-current="page"' if key in keys else '', i + 1, label))
     o.append('</ol></nav><ul class="drawer__more"><li><a href="home-2.html">Home 2</a></li><li><a href="booth-types.html">Booth types</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="service-details.html">Service details</a></li><li><a href="login.html">Client login</a></li></ul>')
-    o.append('<a class="btn btn--accent btn--lg btn--block" href="contact.html#enquiry"><span>Request a Project Quote</span>%s</a>' % ic('arrow'))
-    o.append('<div class="drawer__tools"><button class="btn btn--outline btn--sm" type="button" data-theme-toggle aria-pressed="false">%s<span data-theme-label>Dark mode</span></button>' % ic('moon'))
-    o.append('<span class="drawer__dir"><span>Direction</span>%s</span>' % DIR_SWITCH)
+    # theme + direction live in the header at every width, so the drawer does not repeat them; the quote CTA is hidden
+    # from 768px, where the header shows it (.drawer__cta)
+    o.append('<a class="btn btn--accent btn--lg btn--block drawer__cta" href="contact.html#enquiry"><span>Request a Project Quote</span>%s</a>' % ic('arrow'))
+    o.append('<div class="drawer__tools">')
     o.append('<a class="drawer__phone" href="tel:%s">%s%s</a></div></div></div>' % (SITE['phone_raw'], ic('phone'), SITE['phone']))
     return '\n'.join(o)
 

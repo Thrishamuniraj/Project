@@ -424,6 +424,7 @@ h6 { font-size: var(--fs-md); }
 }
 .mobile-nav-links a[aria-current="page"] { color: var(--color-accent-dark); }
 .mobile-nav-cta { margin-block-start: var(--space-8); display: flex; flex-direction: column; gap: var(--space-3); }
+@media (min-width: 640px) { .mobile-nav-cta { display: none; } } /* the header shows "Request a Quote" from 640px, so the drawer does not repeat it */
 .mobile-nav-info { margin-block-start: var(--space-8); font-size: var(--fs-sm); color: var(--color-text-muted); display: flex; flex-direction: column; gap: var(--space-2); }
 
 body.nav-locked { overflow: hidden; }
@@ -560,6 +561,10 @@ body.nav-locked { overflow: hidden; }
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .service-card p { color: var(--color-text-muted); font-size: var(--fs-sm); flex: 1; }
+/* Card titles at card size (the global h3 is 1.875rem): long titles wrapped and pushed their text out of line with
+   the neighbouring cards; in 3- and 4-column rows every title reserves two lines so the descriptions start together */
+.service-card h3, .value-card h3 { font-size: var(--fs-lg); }
+@media (min-width: 1024px) { .service-card h3, .value-card h3 { min-height: calc(2em * 1.2); } }
 .service-card .card-link { font-weight: 600; font-size: var(--fs-sm); }
 
 /* Product card */
@@ -871,6 +876,10 @@ textarea.input { min-height: 120px; resize: vertical; }
 .newsletter-form { display: flex; gap: var(--space-2); width: 100%; max-width: 420px; flex-wrap: wrap; }
 .newsletter-form .input { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.18); color: var(--color-white); flex: 1; min-width: 200px; }
 .newsletter-form .input::placeholder { color: var(--color-grey-400); }
+/* The rules above style the dark footer form; inside page content (Blog, Blog Details, Coming Soon) the field sits on a
+   light surface, where translucent white on white made it invisible — use the regular input colours there */
+main .newsletter-form .input { background: var(--color-surface); border-color: var(--color-border-strong); color: var(--color-text); }
+main .newsletter-form .input::placeholder { color: var(--color-text-muted); }
 .footer-bottom { padding-block: var(--space-6); }
 .footer-bottom .container { display: flex; flex-direction: column; gap: var(--space-3); align-items: center; text-align: center; font-size: var(--fs-xs); color: var(--color-grey-400); }
 @media (min-width: 768px) { .footer-bottom .container { flex-direction: row; justify-content: space-between; text-align: start; } }
@@ -1141,7 +1150,6 @@ article.post-content blockquote { border-inline-start: 4px solid var(--color-acc
 .dir-toggle:hover { background: var(--color-background-alt); }
 .dir-toggle[aria-pressed="true"] { background: var(--color-accent); border-color: var(--color-accent); color: #1a0d05; }
 .dir-toggle:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
-.mobile-nav-dir { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding-block: var(--space-4); padding-inline-start: var(--space-2); font-size: var(--fs-sm); font-weight: 600; color: var(--color-text-muted); }
 
 
 /* Alignment fixes */
@@ -1172,7 +1180,7 @@ h3 + p, h4 + p, h3 + ul, h4 + ul { margin-block-start: var(--space-2); }
 .main-nav .nav-menu.is-current > .nav-menu__link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; background: var(--color-accent); }
 .nav-menu__list { position: absolute; top: calc(100% + 10px); inset-inline-start: calc(var(--space-3) * -1); z-index: 60; min-width: 250px; padding: var(--space-2); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast); }
 .nav-menu__list::before { content: ""; position: absolute; inset-inline: 0; top: -12px; height: 12px; }
-.nav-menu:hover .nav-menu__list, .nav-menu:focus-within .nav-menu__list { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-menu:hover .nav-menu__list, .nav-menu:focus-within .nav-menu__list, .nav-menu.is-open .nav-menu__list { opacity: 1; visibility: visible; transform: translateY(0); }
 .nav-menu.is-dismissed .nav-menu__list { opacity: 0; visibility: hidden; }
 .nav-menu.is-dismissed .nav-menu__chev { transform: none; }
 .main-nav .nav-menu__list a { display: block; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); color: var(--color-text); font-weight: 500; white-space: nowrap; }
@@ -1222,6 +1230,7 @@ h3 + p, h4 + p, h3 + ul, h4 + ul { margin-block-start: var(--space-2); }
 /* Industries page: alternating industry programme rows */
 .industry-rows { display: grid; gap: var(--space-16); }
 .industry-row__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-lg); }
+@media (max-width: 1023.98px) { .industry-row__img { aspect-ratio: 16 / 9; } } /* stacked rows: shorter photos keep the page scannable on phones and tablets */
 .industry-row__list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); margin-block: var(--space-5); }
 
 /* Custom Embroidery: one clear placement diagram with a numbered legend */
@@ -1255,3 +1264,4 @@ html { scroll-padding-top: calc(var(--header-height) + 17px); }
 /* Components toggled with the hidden attribute: their display rules (e.g. .blog-card { display: flex }) overrode it, so blog
    pagination showed all 12 posts at once and the logo-upload error showed before any interaction */
 .blog-card[hidden], .field-error[hidden], .active-filters[hidden] { display: none; }
+[data-upload-error][hidden] { display: none !important; } /* this error span carries an inline display:flex */

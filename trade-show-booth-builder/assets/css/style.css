@@ -248,7 +248,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .
 .nav-toggle[aria-expanded="true"] .nav-toggle__close { display: block; }
 [data-theme="dark"] .theme-sun { display: none; }
 [data-theme="dark"] .theme-moon { display: block; }
-@media (min-width: 768px) { .header-cta { display: inline-flex; } }
+@media (min-width: 768px) { .header-cta { display: inline-flex; } .drawer__cta { display: none; } }
 @media (min-width: 1180px) {
   .nav { display: block; }
   .nav-toggle { display: none; }
@@ -532,6 +532,11 @@ dialog.lightbox { width: min(1100px, 96vw); max-height: 96dvh; padding: 0; borde
 .page-hero { padding-block: calc(var(--header-h) * 0 + var(--sp-10)) var(--sp-12); position: relative; overflow: hidden; background-color: var(--color-dark-bg); background-image: radial-gradient(60% 70% at 85% 30%, rgba(255, 90, 31, .16), transparent 70%), linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px); background-size: auto, 64px 64px, 64px 64px; }
 .page-hero__inner { display: grid; gap: var(--sp-10); align-items: center; }
 .page-hero .page-title { max-width: 16ch; }
+/* Contact (review): centred page heading, lead and actions */
+.page-hero--center .page-hero__inner { grid-template-columns: minmax(0, 1fr); }
+.page-hero--center .page-hero__text { text-align: center; margin-inline: auto; }
+.page-hero--center .page-title, .page-hero--center .lead { margin-inline: auto; }
+.page-hero--center .breadcrumb ol, .page-hero--center .eyebrow, .page-hero--center .btn-row { justify-content: center; }
 @media (min-width: 1024px) { .page-hero { padding-block: var(--sp-16) var(--sp-20); } .page-hero__inner { grid-template-columns: 1.15fr 1fr; gap: var(--sp-16); } }
 
 /* 12. HOME 1 HERO -------------------------------------------------------------------- */
@@ -600,7 +605,7 @@ dialog.lightbox { width: min(1100px, 96vw); max-height: 96dvh; padding: 0; borde
 .cs-hero__img { position: absolute; inset-inline: 0; inset-block-start: calc(var(--header-h) + var(--sp-4)); width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
 @media (min-width: 768px) { .cs-hero__img { inset: 0; height: 100%; aspect-ratio: auto; object-position: 50% 60%; } }
 .cs-hero__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 16, 19, .3) 0%, rgba(14, 16, 19, 0) 22%, rgba(14, 16, 19, .96) 52%, rgba(14, 16, 19, 1) 100%); }
-@media (min-width: 768px) { .cs-hero__shade { background: linear-gradient(180deg, rgba(14, 16, 19, .55) 0%, rgba(14, 16, 19, .15) 35%, rgba(14, 16, 19, .92) 100%); } }
+@media (min-width: 768px) { .cs-hero__shade { background: linear-gradient(180deg, rgba(14, 16, 19, .6) 0%, rgba(14, 16, 19, .66) 40%, rgba(14, 16, 19, .93) 100%); } } /* even shade: the centred headline sits over the middle of the render */
 .cs-hero__inner { position: relative; padding-block: calc(var(--header-h) + var(--sp-4) + 56.25vw + var(--sp-6)) var(--sp-10); }
 @media (min-width: 768px) { .cs-hero__inner { padding-block: calc(var(--header-h) + var(--sp-10)) var(--sp-10); } }
 .cs-hero__tag { font: 700 var(--fs-xs)/1.4 var(--font-body); letter-spacing: .16em; text-transform: uppercase; color: #dfe3e8; margin-block-end: var(--sp-6); }
@@ -613,7 +618,21 @@ dialog.lightbox { width: min(1100px, 96vw); max-height: 96dvh; padding: 0; borde
 .spec-sheet dt { color: #a9b0bb; }
 .spec-sheet dd { font-weight: 600; text-align: end; }
 .spec-sheet .link-arrow { margin-block-start: var(--sp-4); color: #fff; }
-@media (min-width: 1024px) { .cs-hero__grid { grid-template-columns: 1fr 340px; } .cs-hero__inner { padding-block-end: var(--sp-16); } }
+@media (min-width: 1024px) { .cs-hero__inner { padding-block-end: var(--sp-16); } }
+/* Home 2 hero, centred (review): tag, headline and actions centre-aligned; the project sheet follows as a centred card
+   (a five-column strip on desktop). Content stays bottom-anchored where the shade keeps the text legible. */
+.cs-hero__inner { text-align: center; }
+.cs-hero__grid { justify-items: center; }
+.cs-hero .display { margin-inline: auto; }
+.cs-hero .btn-row { justify-content: center; }
+.cs-hero .spec-sheet { width: min(100%, 420px); text-align: start; }
+@media (min-width: 1024px) {
+  .cs-hero .spec-sheet { width: min(100%, 880px); }
+  .cs-hero .spec-sheet dl { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .cs-hero .spec-sheet dl > div { flex-direction: column; justify-content: flex-start; gap: var(--sp-1); border-block-end: 0; border-inline-start: 1px solid rgba(255, 255, 255, .14); padding-inline: var(--sp-4); }
+  .cs-hero .spec-sheet dl > div:first-child { border-inline-start: 0; padding-inline-start: 0; }
+  .cs-hero .spec-sheet dd { text-align: start; }
+}
 .story { padding-block: var(--sp-16) var(--sp-10); }
 .story__head { margin-block-end: var(--sp-10); }
 .story__head .section-title { max-width: 18ch; }
@@ -640,10 +659,10 @@ dialog.lightbox { width: min(1100px, 96vw); max-height: 96dvh; padding: 0; borde
 .ind-row:hover .ind-row__n, .ind-row:hover .ind-row__count { color: #0e1013; }
 .ind-row:hover .icon { transform: rotate(45deg); }
 @media (min-width: 640px) { .ind-row { grid-template-columns: 56px 1fr auto auto; } .ind-row__count { display: block; } }
-.hstrip { overflow-x: auto; padding-block: var(--sp-2) var(--sp-6); scroll-snap-type: x proximity; scrollbar-width: thin; }
-.hstrip__track { display: flex; gap: var(--sp-5); width: max-content; padding-inline: var(--gutter); }
-.hstrip__track > li { width: min(78vw, 360px); scroll-snap-align: start; }
-.hstrip .plan { height: 100%; }
+/* Home 2 booth types: a wrapping grid instead of a sideways scroller (review: no horizontal scrolling) */
+.plan-grid--4 { list-style: none; padding: 0; margin: 0; }
+@media (min-width: 1024px) { .plan-grid--4 { grid-template-columns: repeat(4, 1fr); } }
+.plan-grid--4 > li, .plan-grid--4 .plan { height: 100%; }
 .cap-grid { display: grid; gap: 1px; background: var(--color-border); border: 1px solid var(--color-border); }
 .cap { padding: var(--sp-6); background: var(--color-dark-bg); }
 .cap .icon { width: 32px; height: 32px; color: var(--color-accent); margin-block-end: var(--sp-5); }
@@ -1091,7 +1110,6 @@ dialog.lightbox { width: min(1100px, 96vw); max-height: 96dvh; padding: 0; borde
 .dir-toggle[aria-pressed="true"] { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); }
 .dir-toggle:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 .site-header--overlay:not(.is-scrolled) .dir-toggle, .on-dark .dir-toggle { border-color: rgba(255, 255, 255, .35); }
-.drawer__dir { display: inline-flex; align-items: center; gap: var(--sp-3); font-weight: 600; }
 
 /* Home 2 enquiry: discovery-call offer beside the form (replaces the separate closing band) */
 .enquiry__call { margin-top: var(--sp-8); padding-top: var(--sp-6); border-top: 1px solid rgba(255, 255, 255, .16); display: grid; gap: var(--sp-4); justify-items: start; }

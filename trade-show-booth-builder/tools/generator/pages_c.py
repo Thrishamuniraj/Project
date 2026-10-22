@@ -68,7 +68,7 @@ def blog_details():
 def contact():
     o = [page_hero([('Contact', None)], 'Project enquiry', 'Tell us about your next exhibition.',
                    'Share the show, the footprint and the goal. A designer replies within one working day with questions, ideas and a next step.',
-                   None, btn('Start the Enquiry Form', '#enquiry') + btn('Call ' + SITE['phone'], 'tel:' + SITE['phone_raw'], 'btn--outline-light', 'phone'))]
+                   None, btn('Start the Enquiry Form', '#enquiry') + btn('Call ' + SITE['phone'], 'tel:' + SITE['phone_raw'], 'btn--outline-light', 'phone'), 'page-hero--center')]
     o.append('<section class="section" aria-labelledby="ct-t"><div class="container contact"><div class="contact__info"><h2 id="ct-t" class="sr-only">Contact information</h2><ul class="info-cards">'
              '<li class="info-card reveal">%s<div><h3>Phone</h3><a href="tel:%s">%s</a></div></li><li class="info-card reveal">%s<div><h3>Email</h3><a href="mailto:%s">%s</a></div></li>'
              '<li class="info-card reveal">%s<div><h3>Office &amp; workshop</h3><address>%s</address></div></li><li class="info-card reveal">%s<div><h3>Working hours</h3><p>%s<br>Show-floor support on call during events</p></div></li></ul>'

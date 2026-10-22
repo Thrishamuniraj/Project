@@ -201,8 +201,7 @@
       '<div class="drawer__scrim" data-drawer-close></div><div class="drawer__panel">' +
       '<div class="drawer__head">' + brand() + '<button type="button" class="icon-btn drawer__close" data-drawer-close aria-label="Close menu">' + icon('x') + '</button></div>' +
       '<ul class="drawer__list">' + navLinks('drawer__link') + '</ul>' +
-      '<div class="drawer__foot"><a class="btn btn--accent btn--block btn--lg" href="partnership.html">Partner With Us</a>' +
-      '<div class="drawer__tools"><span>Appearance &amp; direction</span>' + toggles + '</div>' +
+      '<div class="drawer__foot"><a class="btn btn--accent btn--block btn--lg drawer__cta" href="partnership.html">Partner With Us</a>' +
       '<div class="drawer__contact"><a class="ltr" href="tel:' + SITE.phoneHref + '">' + icon('phone') + SITE.phone + '</a><a href="mailto:' + SITE.email + '">' + icon('mail') + SITE.email + '</a><a href="login.html">' + icon('log-in') + 'Client login</a></div></div></div></div>';
   }
 

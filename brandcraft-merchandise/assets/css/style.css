@@ -408,6 +408,9 @@ textarea:focus-visible, [tabindex]:focus-visible {
 .footer-col a:hover { color: var(--white); }
 .footer-newsletter { display: flex; gap: var(--space-2); margin-top: var(--space-4); flex-wrap: wrap; }
 .footer-newsletter input { flex: 1; min-width: 180px; }
+/* Blog CTA form: the 320px minimum only applies when the band has room for it (it overflowed 360px screens) */
+.cta-newsletter input { min-width: 0; }
+@media (min-width: 640px) { .cta-newsletter { min-width: 320px; } }
 .footer-bottom { padding-block: var(--space-6); }
 .footer-bottom .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-3); font-size: 0.85rem; }
 .footer-bottom-links { display: flex; gap: var(--space-4); flex-wrap: wrap; }
@@ -465,7 +468,8 @@ textarea:focus-visible, [tabindex]:focus-visible {
 .product-price { font-family: var(--font-heading); font-weight: 700; color: var(--color-primary-strong); margin-top: var(--space-2); }
 .product-price small { display: block; font-family: var(--font-body); font-weight: 400; font-size: 0.72rem; color: var(--color-text-muted); }
 .product-actions { display: flex; gap: var(--space-2); margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--color-border); }
-.product-actions .btn { flex: 1; }
+.product-actions { flex-wrap: wrap; }
+.product-actions .btn { flex: 1 1 7.5rem; } /* wraps to two rows when the card is too narrow (1024px grid) instead of cutting off "Request Quote" */
 
 .category-card { position: relative; border-radius: var(--radius-lg); overflow: hidden; padding: var(--space-8); min-height: 320px; display: flex; flex-direction: column; justify-content: flex-end; color: var(--white); background: var(--color-primary-strong); }
 .category-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(120% 120% at 100% 0%, rgba(255,255,255,0.14), transparent 60%); }
@@ -675,7 +679,9 @@ table.data-table { min-width: 640px; }
 /* ---------- 23. FILTERS / SIDEBAR ---------- */
 .catalogue-layout { display: grid; gap: var(--space-10); grid-template-columns: 1fr; }
 @media (min-width: 960px) { .catalogue-layout { grid-template-columns: 260px 1fr; } }
-.filters-panel { border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); align-self: start; position: sticky; top: 96px; }
+.filters-panel { border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); align-self: start; }
+/* sticky only beside the grid: stacked above it (phones/tablets) it stayed pinned and covered the product cards while scrolling */
+@media (min-width: 960px) { .filters-panel { position: sticky; top: 96px; } }
 .filters-panel .filter-group { padding-block: var(--space-4); border-bottom: 1px solid var(--color-border); }
 .filters-panel .filter-group:last-child { border-bottom: none; }
 .filters-panel .filter-group h4, .filters-panel .filter-group .h4 { font-size: 0.85rem; margin-bottom: var(--space-3); }
@@ -720,7 +726,7 @@ table.data-table { min-width: 640px; }
 .workflow-step-btn[aria-selected="true"] strong, .workflow-step-btn[aria-selected="true"] span { color: var(--white); }
 .workflow-step-btn strong { display: block; font-family: var(--font-heading); }
 .workflow-step-btn span { font-size: 0.82rem; color: var(--color-text-muted); }
-.workflow-detail { padding: var(--space-8); border: 1px solid var(--color-border); border-radius: var(--radius-md); min-height: 260px; }
+.workflow-detail { padding: var(--space-8); border: 1px solid var(--color-border); border-radius: var(--radius-md); min-height: 260px; align-self: start; } /* sized to its content instead of stretching to the 8-step list (large empty box) */
 
 /* ---------- 26. ESTIMATOR ---------- */
 .estimator { display: grid; gap: var(--space-8); grid-template-columns: 1fr; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-8); }
@@ -784,15 +790,15 @@ table.data-table { min-width: 640px; }
 .feature-list-item h4, .feature-list-item .h4 { margin-bottom: 2px; font-size: 1rem; }
 .feature-list-item p { font-size: 0.88rem; margin: 0; }
 
-.horizontal-scroller { display: flex; gap: var(--space-6); overflow-x: auto; padding-bottom: var(--space-6); scroll-snap-type: x mandatory; margin: 0 calc(var(--space-4) * -1); padding-inline: var(--space-4); }
-@media (min-width: 1024px) { .horizontal-scroller { margin: 0; padding-inline: 0; } }
-.horizontal-scroller > * { scroll-snap-align: start; flex: 0 0 280px; }
-.horizontal-scroller::-webkit-scrollbar { height: 8px; }
-.horizontal-scroller::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
+/* Rows that used to scroll sideways (Home 2 campaigns, Bulk Orders "Built For") wrap into a grid instead (review:
+   no horizontal scrolling). Columns: 1 on phones, 2 on tablets, --scroller-cols (default 3) on desktop. */
+.horizontal-scroller { display: grid; gap: var(--space-6); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) { .horizontal-scroller { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .horizontal-scroller { grid-template-columns: repeat(var(--scroller-cols, 3), minmax(0, 1fr)); } }
 
 .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--color-surface); border-top: 1px solid var(--color-border); padding: var(--space-3) var(--space-4); display: flex; gap: var(--space-3); z-index: 90; box-shadow: 0 -6px 20px rgba(29,16,51,0.08); transform: translateY(100%); transition: transform 0.25s ease; }
 .sticky-cta.is-visible { transform: translateY(0); }
-.sticky-cta .btn { flex: 1; }
+.sticky-cta .btn { flex: 1 1 0; min-width: 0; padding-inline: var(--space-3); white-space: normal; text-align: center; } /* both buttons fit a 360px screen (Request a Quote was pushed off-screen) */
 @media (min-width: 1024px) { .sticky-cta { display: none; } }
 
 .tag-list { display: flex; flex-wrap: wrap; gap: var(--space-2); }
@@ -838,6 +844,18 @@ table.data-table { min-width: 640px; }
 .category-card.has-photo:hover .category-photo img { transform: scale(1.05); }
 .category-card.has-photo::before { z-index: -1; background: linear-gradient(180deg, transparent 0%, transparent 36%, var(--cat-bg) 58%); }
 .category-card.has-photo h3 { color: var(--white); }
+/* Home 1 "Shop by Category": the three cards share title / text / tag / button rows (subgrid), so titles and text line up
+   even when one description runs longer (review: align sub heading, sub text and CTA) */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 1024px) {
+    .cat-grid { grid-template-rows: minmax(15rem, 1fr) repeat(4, auto); } /* first row = photo area (cards keep their ~460px height) */
+    .cat-grid > .category-card.has-photo { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; }
+    .cat-grid > .category-card.has-photo > h3 { grid-row: 2; }
+    .cat-grid > .category-card.has-photo > p { grid-row: 3; }
+    .cat-grid > .category-card.has-photo > .category-list { grid-row: 4; align-self: start; }
+    .cat-grid > .category-card.has-photo > .btn { grid-row: 5; justify-self: stretch; }
+  }
+}
 .category-card.has-photo p { color: rgba(255, 255, 255, 0.84); }
 .category-card.has-photo.card-outline h3 { color: var(--color-primary-strong); }
 .category-card.has-photo.card-outline p { color: var(--color-text-muted); }
@@ -923,7 +941,6 @@ table.data-table { min-width: 640px; }
 .dir-toggle:hover { border-color: var(--color-accent); color: var(--color-accent-strong); }
 .dir-toggle[aria-pressed="true"] { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
 .dir-toggle:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
-.mobile-nav-dir { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-4); padding-inline-start: calc(var(--space-4) + var(--space-2)); font-weight: 600; color: var(--color-text-muted); }
 
 
 /* Alignment fixes */
@@ -931,7 +948,6 @@ table.data-table { min-width: 640px; }
 h1 + p, h2 + p, h1 + ul, h2 + ul { margin-block-start: var(--space-4); }
 h3 + p, h4 + p, h3 + ul, h4 + ul { margin-block-start: var(--space-2); }
 /* Edge-to-edge scrollers bleed exactly to the container padding at every breakpoint */
-@media (min-width: 640px) and (max-width: 1023px) { .horizontal-scroller { margin-inline: calc(var(--space-6) * -1); padding-inline: var(--space-6); } }
 
 /* Final CTA: proof points under the pitch */
 .cta-proof { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); color: rgba(255,255,255,0.88); font-size: 0.95rem; font-weight: 500; }
@@ -999,3 +1015,7 @@ html { scroll-padding-top: 121px; }
 
 /* Mobile menu Home submenu is collapsed with the hidden attribute; a list display rule kept it open */
 .mobile-nav-sub[hidden] { display: none; }
+
+/* Phones: 2-column card grids left ~86px for text (Branding Methods, gifting kits, pricing factors) — one card per row */
+@media (max-width: 479px) { .grid-4:has(> .service-card) { grid-template-columns: minmax(0, 1fr); } }
+
