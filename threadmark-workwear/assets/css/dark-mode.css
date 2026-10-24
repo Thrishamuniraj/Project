@@ -79,7 +79,8 @@
 [data-theme="dark"] .mobile-nav-links a[aria-current="page"],
 [data-theme="dark"] .product-card-industry,
 [data-theme="dark"] .timeline-year,
-[data-theme="dark"] .team-card span {
+[data-theme="dark"] .team-card span,
+[data-theme="dark"] .map-embed figcaption a {
   color: var(--color-accent-light);
 }
 @media (prefers-color-scheme: dark) {
@@ -87,10 +88,16 @@
   html:not([data-theme="light"]) .mobile-nav-links a[aria-current="page"],
   html:not([data-theme="light"]) .product-card-industry,
   html:not([data-theme="light"]) .timeline-year,
-  html:not([data-theme="light"]) .team-card span {
+  html:not([data-theme="light"]) .team-card span,
+  html:not([data-theme="light"]) .map-embed figcaption a {
     color: var(--color-accent-light);
   }
+  html:not([data-theme="light"]) .trend.up { color: #4cc38a; }
+  html:not([data-theme="light"]) .trend.down { color: #ff8a8f; }
 }
+/* Dashboard trend text on dark cards: the light-theme green/red were 3.45 / 2.65:1 */
+[data-theme="dark"] .trend.up { color: #4cc38a; }
+[data-theme="dark"] .trend.down { color: #ff8a8f; }
 
 /* Respect system dark when unset, mirrored for prefers-color-scheme media only (no explicit attr) */
 @media (prefers-color-scheme: dark) {

@@ -34,14 +34,19 @@
   --color-border-strong: #d3d1ca;
 
   /* --- Semantic --- */
-  --color-success: #1a8f5e;
+  /* Status text colours reach 4.5:1 on white, --color-bg-alt and every status tint (were #1a8f5e / #b9790a / #d1352c, 3.2–4.2:1) */
+  --color-success: #157a50;
   --color-success-bg: #e6f6ee;
-  --color-warning: #b9790a;
+  --color-warning: #8a5a00;
   --color-warning-bg: #fdf1dc;
-  --color-error: #d1352c;
+  --color-error: #c0312a;
   --color-error-bg: #fbe9e8;
   --color-info: #0b6fb0;
   --color-info-bg: #e6f2fb;
+  /* Solid fills behind white icons/numerals; unlike the text colours above, these stay the same in dark mode */
+  --color-success-strong: #157a50;
+  --color-error-strong: #c0312a;
+  --color-info-strong: #0b6fb0;
 
   /* --- Typography --- */
   --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
@@ -441,7 +446,8 @@ strong { font-weight: 700; color: var(--color-text); }
 .input.has-error, .select.has-error, .textarea.has-error { border-color: var(--color-error); }
 .error-msg { display: none; align-items: center; gap: var(--space-1); font-size: var(--fs-xs); color: var(--color-error); font-weight: 600; }
 .field.is-invalid .error-msg { display: flex; }
-.field.is-invalid .input, .field.is-invalid .select, .field.is-invalid .textarea { border-color: var(--color-error); }
+.field.is-invalid .input, .field.is-invalid .select, .field.is-invalid .textarea,
+form[data-validate] input[aria-invalid="true"] { border-color: var(--color-error); }
 .success-msg { display: flex; align-items: center; gap: var(--space-2); font-size: var(--fs-sm); color: var(--color-success); font-weight: 600; }
 
 .input-group { position: relative; display: flex; align-items: center; }
@@ -595,6 +601,7 @@ fieldset.field { border: none; padding: 0; }
 .newsletter-form input::placeholder { color: rgba(255,255,255,0.45); }
 .footer-bottom { padding-block: var(--space-5); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); font-size: var(--fs-xs); }
 .footer-bottom .legal-links { display: flex; gap: var(--space-5); }
+.footer-bottom p { color: inherit; } /* footer stays dark in both themes; the global muted p colour gave 3.02:1 in light mode */
 .payment-icons { display: flex; gap: var(--space-2); align-items: center; opacity: 0.7; font-size: var(--fs-xs); }
 
 @media (max-width: 1024px) {
@@ -701,9 +708,9 @@ fieldset.field { border: none; padding: 0; }
 [dir="rtl"] .toast { transform: translateX(-120%); }
 .toast.is-visible { transform: translateX(0); }
 .toast-icon { width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; }
-.toast.toast-success .toast-icon { background: var(--color-success); }
-.toast.toast-error .toast-icon { background: var(--color-error); }
-.toast.toast-info .toast-icon { background: var(--color-info); }
+.toast.toast-success .toast-icon { background: var(--color-success-strong); }
+.toast.toast-error .toast-icon { background: var(--color-error-strong); }
+.toast.toast-info .toast-icon { background: var(--color-info-strong); }
 .toast .toast-title { font-weight: 700; font-size: var(--fs-sm); }
 .toast .toast-msg { font-size: var(--fs-xs); color: var(--color-text-muted); }
 .toast-close { margin-inline-start: auto; color: var(--color-text-muted); }
@@ -898,7 +905,7 @@ fieldset.field { border: none; padding: 0; }
 .stepper .step .label { font-size: var(--fs-xs); font-weight: 700; color: var(--color-text-muted); white-space: nowrap; }
 .stepper .step.is-active .dot { border-color: var(--color-primary); background: var(--color-primary); color: #fff; }
 .stepper .step.is-active .label { color: var(--color-text); }
-.stepper .step.is-done .dot { border-color: var(--color-success); background: var(--color-success); color: #fff; }
+.stepper .step.is-done .dot { border-color: var(--color-success-strong); background: var(--color-success-strong); color: #fff; } /* white numeral was 4.09:1 on --color-success */
 .stepper .connector { width: 32px; height: 2px; background: var(--color-border-strong); flex-shrink: 0; }
 .stepper .step.is-done + .connector { background: var(--color-success); }
 
@@ -1002,7 +1009,7 @@ fieldset.field { border: none; padding: 0; }
 .dash-sidebar { background: var(--color-secondary); color: rgba(255,255,255,0.75); padding: var(--space-6); position: sticky; top: 0; height: 100vh; overflow-y: auto; }
 .dash-sidebar .brand { color: #fff; margin-bottom: var(--space-8); }
 .dash-nav-group { margin-bottom: var(--space-6); }
-.dash-nav-group .g-title { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: var(--space-3); padding-inline: var(--space-3); }
+.dash-nav-group .g-title { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); margin-bottom: var(--space-3); padding-inline: var(--space-3); } /* 0.4 was 3.83:1 */
 .dash-nav a { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); border-radius: var(--radius-sm); font-weight: 600; font-size: var(--fs-sm); min-height: 44px; }
 .dash-nav a svg { width: 18px; height: 18px; flex-shrink: 0; }
 .dash-nav a:hover { background: rgba(255,255,255,0.08); color: #fff; }

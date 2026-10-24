@@ -15,6 +15,7 @@
   'use strict';
 
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var DEMO_NOTE = '(Demo mode — nothing was sent.)';
   var PHONE_RE = /^[+]?[\d\s().-]{7,20}$/;
   var MAX_FILE_MB = 15;
   var ACCEPTED_TYPES = ['.png', '.jpg', '.jpeg', '.pdf', '.svg', '.ai', '.eps'];
@@ -33,9 +34,18 @@
     field.classList.remove('has-error', 'has-success');
   }
 
+  // Inputs without a .form-field wrapper (footer newsletter, blog CTA, coming-soon notify) used to
+  // pass unchecked, so an empty or malformed email still "submitted". Check them directly.
+  function validateBareInput(input) {
+    var value = (input.value || '').trim();
+    var ok = !(input.hasAttribute('required') && !value) && !(value && input.type === 'email' && !EMAIL_RE.test(value));
+    if (ok) { input.removeAttribute('aria-invalid'); } else { input.setAttribute('aria-invalid', 'true'); }
+    return ok;
+  }
+
   function validateInput(input) {
     var field = input.closest('.form-field');
-    if (!field) { return true; }
+    if (!field) { return validateBareInput(input); }
     var value = (input.value || '').trim();
     var required = input.hasAttribute('required');
 
@@ -119,8 +129,14 @@
       var ok = validateForm(form);
       if (!ok) {
         showStatus(form, 'error', 'Please review the highlighted fields and try again.');
-        var firstError = form.querySelector('.has-error');
-        if (firstError) { firstError.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        if (!form.querySelector('.form-status') && window.BCM && window.BCM.toast) {
+          window.BCM.toast('Please review the highlighted fields and try again.', 'error');
+        }
+        var firstError = form.querySelector('.has-error, [aria-invalid="true"]');
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          if (firstError.matches('input, select, textarea')) { firstError.focus(); }
+        }
         return;
       }
       var submitBtn = form.querySelector('button[type="submit"]');
@@ -130,8 +146,10 @@
         if (submitBtn) { submitBtn.classList.remove('is-loading'); submitBtn.disabled = false; }
         var successMsg = form.getAttribute('data-success-message') ||
           'Thanks! Your quotation request has been received. Our team will review your requirements and contact you shortly.';
+        // fakeSubmit() sends nothing, so say so (login/register messages already do) — remove once a real endpoint is wired up.
+        if (!/demo/i.test(successMsg)) { successMsg += ' ' + DEMO_NOTE; }
         showStatus(form, 'success', successMsg);
-        if (window.BCM && window.BCM.toast) { window.BCM.toast('Request submitted successfully.', 'success'); }
+        if (window.BCM && window.BCM.toast) { window.BCM.toast('Request submitted successfully. ' + DEMO_NOTE, 'success'); }
         form.reset();
         form.querySelectorAll('.form-field').forEach(clearFieldState);
         form.querySelectorAll('.upload-list').forEach(function (list) { list.innerHTML = ''; });

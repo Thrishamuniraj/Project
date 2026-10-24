@@ -49,11 +49,12 @@ table { border-collapse: collapse; width: 100%; }
   --accent-600: #b81d57;
   --accent-100: #fce4ee;
 
-  --success-600: #1e9e6b;
+  /* Status colours reach 4.5:1 as text on their -100 tints and behind white toast text (were #1e9e6b / #b7791f / #c9372c, 3.0–4.3:1) */
+  --success-600: #157a50;
   --success-100: #e2f6ee;
-  --warning-600: #b7791f;
+  --warning-600: #8a5a00;
   --warning-100: #fdf3dc;
-  --error-600: #c9372c;
+  --error-600: #b52f25;
   --error-100: #fbe6e4;
 
   /* Semantic tokens (light mode default) */
@@ -157,6 +158,8 @@ textarea:focus-visible, [tabindex]:focus-visible {
   outline-offset: 2px;
   border-radius: 4px;
 }
+/* Always-dark surfaces use the dark-theme ring: the default #56339a was 1.99:1 against them (#b9a3ea = 8.08:1) */
+.site-footer, .cta-band, .section-dark, .estimator-result, .dash-sidebar, .service-card[style*="--navy-800"] { --color-focus-ring: #b9a3ea; }
 
 .skip-link {
   position: absolute;
@@ -414,6 +417,7 @@ textarea:focus-visible, [tabindex]:focus-visible {
 .footer-bottom { padding-block: var(--space-6); }
 .footer-bottom .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-3); font-size: 0.85rem; }
 .footer-bottom-links { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+.footer-bottom p { color: inherit; } /* footer stays dark in both themes; the global muted p colour gave 2.99:1 in light mode */
 
 /* ---------- 8. HERO ---------- */
 .hero { position: relative; overflow: hidden; padding-block: var(--space-16) var(--space-16); }
@@ -570,7 +574,8 @@ input:focus, select:focus, textarea:focus { border-color: var(--color-primary-so
 select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235b6472' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right var(--space-4) center; padding-right: var(--space-10); }
 [dir="rtl"] select { background-position: left var(--space-4) center; padding-right: var(--space-4); padding-left: var(--space-10); }
 
-.form-field.has-error input, .form-field.has-error select, .form-field.has-error textarea { border-color: var(--error-600); box-shadow: 0 0 0 4px rgba(201,55,44,0.1); }
+.form-field.has-error input, .form-field.has-error select, .form-field.has-error textarea,
+form[data-validate] input[aria-invalid="true"] { border-color: var(--error-600); box-shadow: 0 0 0 4px rgba(201,55,44,0.1); }
 .form-field.has-success input, .form-field.has-success select { border-color: var(--success-600); }
 .field-error { display: none; font-size: 0.78rem; color: var(--error-600); align-items: center; gap: 6px; }
 .form-field.has-error .field-error { display: flex; }

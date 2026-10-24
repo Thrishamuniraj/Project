@@ -17,12 +17,18 @@
 <style>
   /* Dashboard-only layout — kept local since this page is a separate demo shell, not part of the public template. */
   .dash-shell { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
-  @media (max-width: 900px) { .dash-shell { grid-template-columns: 1fr; } .dash-sidebar { display: none; } }
+  @media (max-width: 900px) { .dash-shell { grid-template-columns: 1fr; } }
   .dash-sidebar { background: var(--navy-900, #081a2e); color: rgba(255,255,255,0.8); padding: var(--space-6); }
   .dash-sidebar .brand-name, .dash-sidebar .brand-name span { color: #fff; }
   .dash-nav { margin-top: var(--space-8); display: flex; flex-direction: column; gap: 2px; }
   .dash-nav button { appearance: none; background: transparent; border: none; width: 100%; text-align: left; padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); color: rgba(255,255,255,0.75); font-weight: 600; font-size: 0.9rem; font-family: var(--font-body); cursor: pointer; }
   .dash-nav button.is-active, .dash-nav button:hover { background: rgba(255,255,255,0.1); color: #fff; }
+  /* Phones/tablets: the sidebar used to be hidden here, leaving no way to switch sections — show the section buttons as a wrapped grid instead. */
+  @media (max-width: 900px) {
+    .dash-sidebar { padding: var(--space-4); }
+    .dash-nav { margin-top: var(--space-4); display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: var(--space-1); }
+    .dash-nav button { text-align: center; }
+  }
   .dash-main { min-width: 0; padding: var(--space-8); background: var(--color-bg-alt); }
   .dash-topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-8); flex-wrap: wrap; gap: var(--space-4); }
   .dash-stat-bar { height: 6px; border-radius: 3px; background: var(--color-border); overflow: hidden; margin-top: var(--space-3); }

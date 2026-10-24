@@ -140,7 +140,18 @@
         link.addEventListener('click', closeNav);
       });
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) { closeNav(); }
+        if (!mobileNav.classList.contains('is-open')) { return; }
+        if (e.key === 'Escape') { closeNav(); navToggle.focus(); return; }
+        if (e.key !== 'Tab') { return; }
+        // The open menu covers the whole page, so keep Tab / Shift+Tab inside it.
+        var items = Array.prototype.filter.call(mobileNav.querySelectorAll('a[href], button:not([disabled])'), function (n) {
+          return n.getClientRects().length && getComputedStyle(n).visibility !== 'hidden';
+        });
+        if (!items.length) { return; }
+        var first = items[0], last = items[items.length - 1];
+        if (!mobileNav.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+        else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
       });
     }
 

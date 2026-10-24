@@ -54,7 +54,7 @@
 /* Component-level adjustments that aren't pure token swaps */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .btn-primary { background: var(--color-primary-soft); color: #fff; }
-  :root:not([data-theme="light"]) .btn-primary:hover { background: var(--color-accent); }
+  :root:not([data-theme="light"]) .btn-primary:hover { background: var(--color-accent); color: #1a0d14; } /* white on the pink accent was 2.68:1 */
   :root:not([data-theme="light"]) .btn-outline { color: var(--color-text); }
   :root:not([data-theme="light"]) .btn-outline:hover { background: var(--color-surface-raised); color: var(--color-text); }
   :root:not([data-theme="light"]) .collage-tile.tile-1,
@@ -73,7 +73,7 @@
 }
 
 :root[data-theme="dark"] .btn-primary { background: var(--color-primary-soft); color: #fff; }
-:root[data-theme="dark"] .btn-primary:hover { background: var(--color-accent); }
+:root[data-theme="dark"] .btn-primary:hover { background: var(--color-accent); color: #1a0d14; } /* white on the pink accent was 2.68:1 */
 :root[data-theme="dark"] .btn-outline { color: var(--color-text); }
 :root[data-theme="dark"] .btn-outline:hover { background: var(--color-surface-raised); color: var(--color-text); }
 :root[data-theme="dark"] .collage-tile.tile-1,
@@ -96,6 +96,9 @@
 :root[data-theme="dark"] .pagination .is-current,
 :root[data-theme="dark"] .toast,
 :root[data-theme="dark"] .chip-select input:checked + label { background: #56339a; border-color: #56339a; color: #fff; }
+/* status text drawn straight on dark surfaces (badges and status boxes keep their light tints and dark text) */
+:root[data-theme="dark"] .field-error, :root[data-theme="dark"] .upload-item.is-error .field-error-inline { color: #ff8a8f; }
+:root[data-theme="dark"] .check-yes { color: #4cc38a; }
 :root[data-theme="dark"] .category-card.has-photo { background: var(--cat-bg); }
 :root[data-theme="dark"] .category-card.has-photo:not(.card-outline) h3 { color: #fff; }
 :root[data-theme="dark"] .category-card.has-photo:not(.card-outline) p { color: rgba(255, 255, 255, 0.84); }
@@ -106,6 +109,8 @@
   :root:not([data-theme="light"]) .pagination .is-current,
   :root:not([data-theme="light"]) .toast,
   :root:not([data-theme="light"]) .chip-select input:checked + label { background: #56339a; border-color: #56339a; color: #fff; }
+  :root:not([data-theme="light"]) .field-error, :root:not([data-theme="light"]) .upload-item.is-error .field-error-inline { color: #ff8a8f; }
+  :root:not([data-theme="light"]) .check-yes { color: #4cc38a; }
   :root:not([data-theme="light"]) .category-card.has-photo { background: var(--cat-bg); }
   :root:not([data-theme="light"]) .category-card.has-photo:not(.card-outline) h3 { color: #fff; }
   :root:not([data-theme="light"]) .category-card.has-photo:not(.card-outline) p { color: rgba(255, 255, 255, 0.84); }
@@ -119,14 +124,16 @@
   :root:not([data-theme="light"]) .header-utility a { color: var(--color-text); }
   :root:not([data-theme="light"]) .header-utility a:hover { color: var(--color-accent-strong); }
   :root:not([data-theme="light"]) .btn-accent,
-  :root:not([data-theme="light"]) .dir-toggle[aria-pressed="true"] { color: #1a0d14; }
+  :root:not([data-theme="light"]) .dir-toggle[aria-pressed="true"],
+  :root:not([data-theme="light"]) .workflow-step-btn[aria-selected="true"] .step-circle { color: #1a0d14; }
   :root:not([data-theme="light"]) .product-card .product-media { background: var(--color-surface-raised); }
 }
 :root[data-theme="dark"] .header-utility,
 :root[data-theme="dark"] .header-utility a { color: var(--color-text); }
 :root[data-theme="dark"] .header-utility a:hover { color: var(--color-accent-strong); }
 :root[data-theme="dark"] .btn-accent,
-:root[data-theme="dark"] .dir-toggle[aria-pressed="true"] { color: #1a0d14; }
+:root[data-theme="dark"] .dir-toggle[aria-pressed="true"],
+:root[data-theme="dark"] .workflow-step-btn[aria-selected="true"] .step-circle { color: #1a0d14; }
 :root[data-theme="dark"] .product-card .product-media { background: var(--color-surface-raised); }
 
 /* Outline-inverse buttons hover to a white fill; the default hover text colour (--color-primary-strong) turns

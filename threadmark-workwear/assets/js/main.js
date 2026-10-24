@@ -115,7 +115,16 @@
     if (closeBtn) closeBtn.addEventListener('click', close);
     if (backdrop) backdrop.addEventListener('click', close);
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && nav.getAttribute('data-open') === 'true') close();
+      if (nav.getAttribute('data-open') !== 'true') return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key !== 'Tab') return;
+      // The open menu covers the page, so keep Tab / Shift+Tab inside it.
+      const items = [...nav.querySelectorAll('a[href], button:not([disabled])')].filter((n) => n.getClientRects().length && getComputedStyle(n).visibility !== 'hidden');
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1];
+      if (!nav.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+      else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
   }
 
@@ -352,6 +361,8 @@
      ------------------------------------------------------------------ */
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const PHONE_RE = /^[+]?[\d\s().-]{7,20}$/;
+  // Forms only simulate a send until an endpoint is configured, so success messages say so — remove once it is.
+  const DEMO_NOTE = '(Demo mode — nothing was sent.)';
 
   function setFieldError(field, message) {
     const wrap = field.closest('.field');
@@ -453,8 +464,11 @@
       if (submitBtn) submitBtn.classList.remove('is-loading');
       form.reset();
       form.querySelectorAll('.upload-list').forEach((list) => (list.innerHTML = ''));
-      if (successEl) successEl.hidden = false;
-      showToast({ type: 'success', title: 'Request received', message: "We'll be in touch within one business day." });
+      if (successEl) {
+        successEl.hidden = false;
+        if (!successEl.querySelector('[data-demo-note]')) successEl.insertAdjacentHTML('beforeend', ` <span data-demo-note>${DEMO_NOTE}</span>`);
+      }
+      showToast({ type: 'success', title: 'Request received', message: `We'll be in touch within one business day. ${DEMO_NOTE}` });
       if (typeof onSuccess === 'function') onSuccess();
     }, 900);
   }
@@ -481,7 +495,7 @@
           return;
         }
         // TODO: Replace with Mailchimp / ConvertKit form action + list ID
-        showToast({ type: 'success', title: 'Subscribed', message: "You're on the list for uniform & workwear updates." });
+        showToast({ type: 'success', title: 'Subscribed', message: `You're on the list for uniform & workwear updates. ${DEMO_NOTE}` });
         form.reset();
       });
     });

@@ -137,13 +137,28 @@
       if (!drawer.classList.contains('is-open')) return;
       if (e.key === 'Escape') { setDrawer(false); navToggle.focus(); return; }
       if (e.key !== 'Tab') return;
-      const items = $$('a[href], button:not([disabled])', drawer).concat($$('.site-header__actions button, .site-header__actions a'));
+      // one query so the list is in document order; concatenating drawer + header items made "last" a header
+      // button, so Tab from the drawer's real last link left the drawer for the page behind it
+      const items = $$('.site-header__actions button, .site-header__actions a, [data-drawer] a[href], [data-drawer] button:not([disabled])');
       const visible = items.filter((el) => el.offsetParent !== null);
       const first = visible[0];
       const last = visible[visible.length - 1];
       if (e.shiftKey && d.activeElement === first) { e.preventDefault(); last.focus(); }
       else if (!e.shiftKey && d.activeElement === last) { e.preventDefault(); first.focus(); }
     });
+  }
+
+  /* ---------------------------------------------------------------- sticky filter bar */
+  // Blog / portfolio: from 1024px the filter bar sticks under the header, so scrolled-to or focused cards must clear
+  // both (scroll-padding only allowed for the header, and cards could end up fully hidden behind the bar).
+  const filterbar = $('.filterbar');
+  if (filterbar) {
+    const padForFilterbar = () => {
+      const sticky = getComputedStyle(filterbar).position === 'sticky';
+      d.documentElement.style.scrollPaddingTop = sticky ? ((header ? header.offsetHeight : 0) + filterbar.offsetHeight + 16) + 'px' : '';
+    };
+    padForFilterbar();
+    window.addEventListener('resize', padForFilterbar);
   }
 
   /* ---------------------------------------------------------------- desktop dropdowns */
@@ -159,17 +174,26 @@
     if (t) {
       const li = t.closest('.has-sub');
       const open = !li.classList.contains('is-open');
+      li.classList.remove('is-dismissed');
       li.classList.toggle('is-open', open);
       t.setAttribute('aria-expanded', String(open));
     }
   });
   d.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
-    $$('.has-sub.is-open').forEach((li) => {
+    // hover and focus-within also show a submenu (CSS), so Escape marks it dismissed until pointer and focus leave it
+    $$('.has-sub').forEach((li) => {
+      const focused = li.contains(d.activeElement), wasOpen = li.classList.contains('is-open');
+      if (!wasOpen && !focused && !li.matches(':hover')) return;
       li.classList.remove('is-open');
+      li.classList.add('is-dismissed');
       const b = $('[data-sub-toggle]', li);
-      if (b) { b.setAttribute('aria-expanded', 'false'); b.focus(); }
+      if (b) { b.setAttribute('aria-expanded', 'false'); if (focused || wasOpen) b.focus(); }
     });
+  });
+  $$('.has-sub').forEach((li) => {
+    li.addEventListener('mouseleave', () => { if (!li.contains(d.activeElement)) li.classList.remove('is-dismissed'); });
+    li.addEventListener('focusout', (e) => { if (!li.contains(e.relatedTarget)) li.classList.remove('is-dismissed'); });
   });
 
   /* ---------------------------------------------------------------- scroll reveal */

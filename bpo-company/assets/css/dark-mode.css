@@ -48,4 +48,5 @@
 :root[data-theme="dark"] .input, :root[data-theme="dark"] .select, :root[data-theme="dark"] .textarea { background: #0c1118; }
 :root[data-theme="dark"] .newsletter .input { background: rgba(255, 255, 255, .06); }
 :root[data-theme="dark"] .file-drop { background: var(--surface); }
+:root[data-theme="dark"] .stepper__num { color: var(--bg); } /* white on the brighter dark-theme teal was 3.38:1 */
 :root[data-theme="dark"] ::selection { background: var(--accent); color: var(--on-accent); }

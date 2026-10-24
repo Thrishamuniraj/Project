@@ -484,7 +484,7 @@ body.nav-locked { overflow: hidden; }
 }
 @media (max-width: 639px) { .hero-badge { position: static; margin-top: var(--space-4); max-width: none; } }
 .hero-badge strong { display: block; font-size: var(--fs-sm); }
-.hero-badge span { font-size: var(--fs-xs); color: var(--color-text-muted); }
+.hero-badge span { font-size: var(--fs-xs); color: var(--color-grey-500); } /* badge is white in both themes, so not the theme-switching muted token */
 
 .page-hero {
   background: linear-gradient(155deg, var(--color-primary-dark), var(--color-primary));
